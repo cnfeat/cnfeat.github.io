@@ -1,0 +1,119 @@
+@import "vars";
+
+.content {
+    p {
+        font-weight: Normal;
+		line-height: 1.6rem;
+		color: #102a43;
+    }
+    .callout {
+        padding: 20px;
+        padding-left: 30px;
+        font-size: 18px;
+        border-left: solid 10px #EFD6C5;
+    }
+    .paper-desc {
+        padding: 5px;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        font-style: italic;
+        border-left: solid 10px #EFD6C5;
+    }
+    .main-page-list {
+        font-size: 16px;
+		line-height: 0.5;
+        list-style: none;
+        font-family: Rubik;
+    }
+    .main-page-list small {
+        font-weight: lighter;
+    }
+    a {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+		color: #00a67d;
+    }
+    a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+    .una {
+        text-decoration: none;
+    }
+    ol {
+        counter-reset: list;
+    }
+    ol > li {
+        list-style-position: none;
+        position: relative;
+        list-style: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    ul > li {
+        margin: 5px 0 5px 0;
+    }
+    ul {
+        padding: 0 20px 0 20px;;
+    }
+    ol {
+        padding: 0 30px 0 30px;
+    }
+    ol > li:before {
+        content: "[" counter(list, decimal) "] ";
+        counter-increment: list;
+        position: absolute;
+        left: -30px;
+    }
+    blockquote {
+        //border: 1px solid black;
+        border-left: 5px solid $accent;
+        margin: 20px 0 20px 10px;
+        padding: 2px 8px 2px 8px;
+        font-style: italic;
+    }
+    .book-cover {
+        height: auto;
+        width: 200px;;
+        position: relative;
+        margin: 0;
+        float: right;
+        p & {
+            padding: 0;
+            margin: 0;
+        }
+        @media (max-width: $small-width) {
+            img {
+                margin-top: -5px;
+            }
+        }
+    }
+    .profile-picture {
+        height: $image-size;
+        width: $image-size;
+        position: relative;
+        margin: -10px 0 0 15px;
+        float: right;
+        border-radius: 50%;
+        p & {
+            padding: 0;
+            margin: 0;
+        }
+        @media (max-width: $small-width) {
+            img {
+                margin-top: -5px;
+            }
+        }
+    }
+    img {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+.post-meta {
+    color: #9fb3c8;  /* 字体颜色 */
+    
+}

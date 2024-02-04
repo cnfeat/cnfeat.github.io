@@ -1,0 +1,27 @@
+title: 笨方法学写作
+url: "https://cnfeat.com"
+baseurl: ""
+
+markdown: kramdown
+#ins_logo: "./bits-logo.png"
+
+tracking_id: UA-80884545-1
+
+footer: yes
+footer_url: "http://www.HardWayLab.com"
+footer_text: "笨方法实验室：世上无难事，只怕笨方法"
+
+favicon: true
+favicon_location: "images/favicon.png"
+
+sass:
+  style: compressed
+  sass_dir: _sass
+
+nav:
+  - name: "关于"
+    link: "/about"
+  - name: "博客"
+    link: "/blog"
+  - name: "作品"
+    link: "/books"

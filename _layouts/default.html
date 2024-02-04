@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
+    <meta name="author" content="{{ site.author }}">
+    {% if page.url == "/404.html" %}
+    <meta http-equiv="refresh" content="5; url=/">
+    {% endif %}
+    {% if page.description %}
+    {% assign desc = page.description %}
+    {% else %}
+    {% assign desc = site.description %}
+    {% endif %}
+    {% if page.url %}
+    {% assign url = site.url | append: site.baseurl | append: page.url %}
+    {% else %}
+    {% assign url = site.url | append: site.baseurl | append: page.url %}
+    {% endif %}
+    <meta name="description" content="{{ desc }}">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    {% if site.favicon %}
+    <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
+    <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
+    {% endif %}
+    {% if site.twitter_username %}
+    <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
+    {% endif %}
+    <!-- Facebook Open Graph -->
+    <meta name="og:description" content="{{ desc }}">
+    <meta name="og:title" content="{{ site.title }}">
+    <meta name="og:url" content="{{ url }}">
+    <meta name="og:type" content="article">
+    {% if site.og_image %}
+    <meta name="og:image" content="{{ site.og_image }}">
+    {% endif %}
+    {% if site.facebook_id %}
+    <meta name="fb:admins" content="{{ site.facebook_id }}">
+    {% endif %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ desc }}">
+    <meta name="twitter:url" content="{{ url }}">
+    {% if site.twitter_image %}
+    <meta name="twitter:image" content="{{ site.twitter_image }}">
+    {% else %}
+    <meta name="twitter:image" content="{{ site.profile_picture }}">
+    {% endif %}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar container">
+            {% if site.ins_logo %}
+            <img id="ins-logo" src="{{ site.ins_logo }}" />
+            {% endif %}
+            <a id="author-name" class="alignable pull-left" href="{{ site.url }}">{{ site.title }}</a>
+            <ul id="navlist" class="alignable pull-right navbar-ul">
+                {% for x in site.nav %}
+                {% if x.name == "Resume" %}
+                <li class="alignable pull-left nav-list"><a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
+                    {% else %}
+                <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
+                    {% endif %}
+                    {% if forloop.last == false %}
+                    /
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div style="clear:both"></div>
+        <hr>
+        {% if page.is_contact == true %}
+        <div class="container content contact">
+            {% else %}
+            <div class="container content">
+                {% endif %}
+				    {% if page.title %}
+						<h2>{{ page.title }}</h2>
+					{% endif %}
+				<p style="color: #9fb3c8;">{{ page.date | date: "%Y-%m-%d" }} 发布</p>	
+
+                {{ content }}
+                {% if site.footer == true %}
+                <hr />
+                <p style="text-align: center; margin-bottom: 10px; text-decoration: underline; color: #00a67d">
+                    <a class="una" href="{{ site.footer_url }}" style="color: #00a67d"><Normal>{{ site.footer_text
+                            }}</Normal></a>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+        {% if site.tracking_id %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69243698-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', '{{ site.tracking_id }}');
+        </script>
+        {% endif %}
+</body>
+
+<footer class="site-footer" style="text-align: center; ">
+    <p>加入「笨方法学写作」知识星球，这一次彻底学会写作</p>
+    <div>你将⬇⬇⬇</div>
+        <li>1）认知科学解惑：正确理解卡片创作的基本原理</li>
+        <li>2）实践养成习惯：循序渐进开始每天写一张卡片</li>
+        <li>3）原则善写卡片：掌握运用高手的10条认知心法</li>
+        <li>4）规范高效创作：模仿组合高手的10条行动路径</li>
+		<div style="height: 20px;"></div>
+    <img src="https://s11.ax1x.com/2023/12/31/piOg8fJ.jpg" alt="课程二维码" width="500">
+    <!-- 其他您希望添加的内容 -->
+</footer>
+
+
