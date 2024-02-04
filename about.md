@@ -4,21 +4,15 @@ layout: main
 date: 笨方法实验室 ·
 ---
 
-cnfeat，全网通用 ID 是 「cnfeat」
+我是 cnfeat
 
-自认不是聪明人，坚信一步一个脚印
+📍  [笨方法实验室](https://www.yuque.com/hardwaylab/book)创始人，坚信「世上无难事，只怕笨方法」。
 
-多年前学习写作，从笨方法每天1000字开始
+📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)， 已有 5 万人领取。
 
-此后发现，自己尤其适合笨方法
+📍 日课一卡 10 年，卡片写作 7 年，写过 10000+ 张纸质卡片。
 
-所以创办[笨方法实验室](https://www.yuque.com/hardwaylab/book)，总结经验教训
-
-践行「世上无难事，只怕笨方法」
-
-- ✨日课一卡10年，卡片写作7年
-- 💡写过10000+张纸质卡片
-- 📍10万字[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)已有5万人领取
+📚 课程[《笨方法学写作》](https://www.yuque.com/hardwaylab/zzybgv/luvhdr)，已有 750+ 人学习。
 
 ## 工作经历
 
@@ -122,6 +116,7 @@ cnfeat，全网通用 ID 是 「cnfeat」
 1. 爱情共识和幸福婚姻：曾在恋爱三天后写了一份《爱情共识、关系改进及异议处理办法》，并发送给当时的女友，现在已经成为我的妻子。现在结婚七年多，少有争吵。
 2. 写情书的技巧：给老婆写过 100+ 情书，写情书经验 10+ 年。通过写情书，懂得学会了如何表达自己的感情，如何关注对方的需求和情感，这些技巧同样适用于任何类型的写作和沟通。
 3. 生日礼物的替代品：现在老婆每年生日，我依然是不送昂贵的物品，而是写[一封信](http://newsletter.hardwaylab.com/issues/10-100-10-1257788)给她。
+
 ### 我喜爱的艺术家
 
 - [Ramin Djawadi](https://music.163.com/#/artist?id=41992) 作曲家

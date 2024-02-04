@@ -1,5 +1,5 @@
 ---
-title: 如何向大互联网公司学习设计？以 Tencent ISUX Design 为例 | 自学设计的三种方法，附资源索引
+title: 如何向大互联网公司学习设计？
 layout: default
 tags: [读书,卡片]
 pinned: false

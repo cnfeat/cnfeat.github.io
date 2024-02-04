@@ -4,7 +4,7 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -55,6 +55,10 @@ GEM
       ffi (~> 1.9)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.1)
+      tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
     wdm (0.1.1)
     webrick (1.8.1)
@@ -64,8 +68,10 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.2.0)
+  tzinfo
+  tzinfo-data
   wdm
   webrick
 
 BUNDLED WITH
-   2.5.3
+   2.5.5

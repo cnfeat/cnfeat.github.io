@@ -3,14 +3,15 @@ layout: main
 date: 笨方法实验室 ·
 ---
 
+我是 cnfeat
 
-我是 cnfeat，笨方法实验室创始人，坚信「世上无难事，只怕笨方法」。
+📍  [笨方法实验室](https://www.yuque.com/hardwaylab/book)创始人，坚信「世上无难事，只怕笨方法」。
 
-📍 日课一卡10年，卡片写作7年，写过10000+张纸质卡片。
+📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)， 已有 5 万人领取。
 
-📍 代表作12万字《笨方法文化手册》已有5万人领取。
+📍 日课一卡 10 年，卡片写作 7 年，写过 10000+ 张纸质卡片。
 
-
+📚 课程[《笨方法学写作》](https://www.yuque.com/hardwaylab/zzybgv/luvhdr)，已有 750+ 人学习。
 
 ---
 
