@@ -42,16 +42,3 @@ blog_post: true
 无论过去我怎失手都会拥有
 
 ————《感情线上》
-
-----
-
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：*** by Hoang Duong）
-
-点击「阅读原文」看一篇文章
-
-###《连岳：爱情和行贿一样 需要送礼物》
-
-http://www.douban.com/group/topic/31399294/

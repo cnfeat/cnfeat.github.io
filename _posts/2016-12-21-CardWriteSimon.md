@@ -42,9 +42,7 @@ blog_post: true
 - 2016-12-17 增补
 - 2016-12-16 构思
 
-### -The End-
 
-![](http://openmindclub.qiniudn.com/omt/CardWriting03.jpg)
 
 ###  本文使用[卡片创作法](http://cnfeat.com/blog/2016/11/20/NabokovWriteStyle/)写成
 
@@ -52,7 +50,6 @@ blog_post: true
 
 写完这篇文章，我刚好看到手头的片与 iPhone 6P ，一比对，发现卡片与 6P 的屏幕竟然相差无几，一边是 60 年前第一代人工智能机器的设计原型，一边是当今智能机器的顶尖代表，我也不相信这是巧合。
 
-![](http://openmindclub.qiniudn.com/omt/CardSimon02.jpg)
 
 
 

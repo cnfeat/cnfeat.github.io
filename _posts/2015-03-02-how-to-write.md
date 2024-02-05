@@ -248,12 +248,6 @@ description: 通告一下，我已不再每天写千字文，准备采用以下�
 
 《笨方法学写作》自 2017 年 10 月发布，采取互联网开发产品模式更新，陆续更新 8 个月，课程已全面升级至 2.0，大纲如下：
 
-![](https://wx2.sinaimg.cn/mw690/617ccc0cgy1frnq4k29gvj20p018gtcs.jpg)
-
-
-![](https://wx4.sinaimg.cn/mw690/617ccc0cgy1fry3rzjmsej20sg0lcjwh.jpg)
-
-![](https://ws1.sinaimg.cn/large/617ccc0cgy1ftmgn2p3cuj20p018ganx.jpg)
 
 ## 卡片写作
 

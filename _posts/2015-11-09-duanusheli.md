@@ -8,8 +8,6 @@ blog_post: true
 
 
 
-![](![](http://openmindclub.qiniudn.com/cnfeat/image/duansheli.jpg)
-
 ## 背景 
 
 
@@ -141,10 +139,6 @@ blog_post: true
 
 哈哈，估计你看到最后的书单，信息过载的问题更严重了。
 
-
-----
-
-（题图：Top view of desk with laptop, iPhone, pencils & headphones @ http://kaboompics.com/ ）
 
 
 

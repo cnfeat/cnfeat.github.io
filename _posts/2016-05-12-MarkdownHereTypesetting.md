@@ -36,7 +36,7 @@ blog_post: true
 
 ----
 
-###### 六经注我
+## 六经注我
 
 我不会在通讯写技术文档了，如果有，也只会放在[GoodThingList](https://github.com/cnfeat/GoodThingList)，觉得好，请加星。
 

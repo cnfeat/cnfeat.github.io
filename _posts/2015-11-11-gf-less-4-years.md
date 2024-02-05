@@ -6,7 +6,7 @@ pinned: false
 blog_post: true
 ---
 
-![](http://cnfeat.qiniudn.com/Yosemite,%20U.S..jpg)
+
 
 ````
 就在双11的前一天

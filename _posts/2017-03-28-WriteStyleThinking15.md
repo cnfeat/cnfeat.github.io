@@ -39,8 +39,6 @@ blog_post: true
 - 2017-03-28 整理组合成文
 - 2017-03-24 起稿
 
-![](https://mmbiz.qlogo.cn/mmbiz_jpg/HRoY0QT1GiaYql9M2wJEwMnTjn5TdicnrzZ7s7icUskVQI80Tb94ExMyjdGQESlKybnT6iaiaWGLpOxOGQmuncWFAjQ/0?wx_fmt=jpeg)
-
 ### 六经注我
 
 参考我的写作清单是没有用的，你得形成你自己的写作清单！
