@@ -32,8 +32,4 @@ blog_post: true
 2014年2月28日 00:23:08 40min
 
 
-**【一期一会】**
-
-![](http://media-cache-ak0.pinimg.com/736x/ae/e5/3c/aee53c508b8555aa7d7fa06f5aee40d5.jpg)
-
 

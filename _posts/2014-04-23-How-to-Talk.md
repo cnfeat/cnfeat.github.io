@@ -69,16 +69,6 @@ blog_post: true
 
 把说话练好，其实就是把别人在自己心中的位置放好，这才是最划算的事。
 
-（题图：Bird Talk by Robert Burk）
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%20000.png)
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%202014-03-27-00-56.png)
-###**【一期一会】**
-
-朋友：「我儿子帅不？」
-
-我：「像我儿子。」
 
 
 

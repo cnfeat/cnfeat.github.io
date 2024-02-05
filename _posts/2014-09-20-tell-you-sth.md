@@ -20,7 +20,7 @@ blog_post: true
 最后，我再送给大家一首诗。
 
 
-###在变老之前远去
+### 在变老之前远去
 
 --
  
@@ -71,15 +71,6 @@ blog_post: true
 在变老前踩着剩下的步点远去
 
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，可能你会获得更多。
-
-点击「阅读原文」到我的博客查看[历史文章存档](http://cnfeat.com)。
-
-![](http://cnfeat.qiniudn.com/mHDSX.png)
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-07-11.png)
 
 
 **【一期一会】**

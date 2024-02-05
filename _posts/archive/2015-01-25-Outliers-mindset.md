@@ -19,22 +19,3 @@ blog_post: true
 一些人人生遭遇滑铁卢，其实不是因为缺智商缺才能缺知识，而是缺眼光，不知道地平线那边走过来的到底是什么东西，所以只是跟着身边人瞎起哄，追赶他们追赶的一切，最终稀里糊涂而晕倒。
 
 ————南桥
-
-----
-
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：Not My Sail's Dawn by Lyokin Photography）
-
-回复关键词「意志」看
-
-###《想成功，先拿出你的意志力！》
-
-http://www.jianshu.com/p/c624d44998a5
-
-
-
-
-
-

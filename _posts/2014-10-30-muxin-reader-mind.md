@@ -36,15 +36,7 @@ blog_post: true
 
 「读者观念」除了心存读者，仍要心存自己，所谓明月松间照，清泉石上流，就是这个意思了。
 
-----
 
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：Spikey The Hedgehog by Edwin Kats）
-
-昨晚我在豆瓣更新了雕爷的推荐书单，喜欢的雕爷的同学请直接点击[「阅读原文」](http://book.douban.com/people/cnfeat/doulists)进去。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
 
 **【一期一会】**
 

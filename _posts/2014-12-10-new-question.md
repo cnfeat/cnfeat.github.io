@@ -34,15 +34,3 @@ blog_post: true
 
 ——王小波
 
-
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-11-15.jpg)
-
-（题图：'Wanna hug?' 'NOOOO!' by Sylvain Fleur）
-
-点击「阅读原文」依旧会有好文看，今天的好文是：
-
-###[我为什么要做《私读》？](http://site.douban.com/210084/widget/notes/13307807/note/468255736/)

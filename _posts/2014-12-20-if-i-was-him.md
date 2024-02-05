@@ -52,25 +52,10 @@ blog_post: true
 
 ###**【一期一会】**
 
-![](http://7d9mjz.com1.z0.glb.clouddn.com/Image-000-12-19-14-00.png)
 
 《耍猴人的江湖》
 
 生活就是生活，他没有只站在哪一方的立场上，不赞美，不责难，甚至也不惋惜，但求了解认识而已。
-
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：洱海老人. by TheDrummerKick）
-
-点击「阅读原文」看好文：
-
-###[《只求了解与认识而已》](http://book.kanunu.org/book4/9611/212523.html)
-
-
 
 
 

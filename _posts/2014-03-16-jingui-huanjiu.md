@@ -16,7 +16,7 @@ blog_post: true
 
 但是，看着这本书，一个问题始终困扰着我：「最好金龟换酒」到底是什么意思？
 
-![](http://openmindclub.qiniudn.com/omt/FuZhen.jpg)
+
 
 之前，我写《藏地白皮书》读后感[《遇见一阵穿堂风》](http://zhuanlan.zhihu.com/cnfeat/19682413)的时候，也尝试去上过傅真的博客查找，没有发现傅真对「最好金龟换酒」的解释，于是我决定自己上网查一查。
 
@@ -64,7 +64,6 @@ blog_post: true
 
 如果没有遇到，也不用急，也许是走的路还太少，或者相遇的时间太短，又或者是缘分未到。
 
-![](http://openmindclub.qiniudn.com/omt/FuZhenBook.jpg)
 
 
 

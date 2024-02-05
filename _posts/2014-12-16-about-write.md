@@ -37,27 +37,6 @@ blog_post: true
 我深知我长进的时间实在是太慢，可能是我起步太迟，可能是我悟性太低，十年可能不够，我还要用更多的时间写，去阅读，去实践。
 
 
----
-
-###**【一期一会】**
-
-![](http://img3.douban.com/view/status/raw/public/32a70e64b28eda3.jpg)
-
-坑狗的主人，笑屎啦。
-
-
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：Pen-5 by Behram Dosdogru）
-
-点击「阅读原文」依旧会有好文看，今天的好文是：
-
-###[《聪明人的笨功夫——论读书及其他》](http://www.douban.com/note/327697309/)
-
 
 
 

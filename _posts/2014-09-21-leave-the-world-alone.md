@@ -1,5 +1,5 @@
 ---
-title: 《世界与你无关》：世界虽然充满荒诞，但仍不至于与你无关
+title: 世界虽然充满荒诞，但仍不至于与你无关
 layout: default
 tags: [世界与你无关,知识管理]
 pinned: false
@@ -30,15 +30,6 @@ blog_post: true
 最后，我发觉情感类的书我还喜欢连岳的，除了思辨还有戏谑，除了真实还有宽厚，除了故事还有哲学，是的，世界虽然充满荒诞，但仍不至于与你无关。
 
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，可能你会获得更多。
-
-点击「阅读原文」到我的博客查看[历史文章存档](http://cnfeat.com)。
-
-![](http://cnfeat.qiniudn.com/mHDSX.png)
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-07-11.png)
 
 
 **【一期一会】**

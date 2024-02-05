@@ -30,7 +30,6 @@ blog_post: true
 - **矛盾处理**
 - **共同进步**
 
-![](http://cnfeat.qiniudn.com/d686c925ec844dfdf1c05043b748959ae45ae22c1b695-MpPycH.jpg)
 
 ## 1、爱情的认识
 
@@ -97,7 +96,6 @@ blog_post: true
 
 共同努力，把共同信念和共同价值不断扩张。
 
-![](http://openmindclub.qiniudn.com/omt/No7File.png)
 
 ## 5、双方其他问题及建议
 
@@ -116,8 +114,6 @@ blog_post: true
 同时推荐看连岳的[《婚前必答15题》](http://lianyue.baijia.baidu.com/article/2999)
 
 就说到这吧，剩下的就看做不做了。
-
-![](http://openmindclub.qiniudn.com/omt/No7File01.png)
 
 
 

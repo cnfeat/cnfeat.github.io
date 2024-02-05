@@ -136,24 +136,5 @@ blog_post: true
 这就是我为什么那么喜欢坐火车
 
 
-![](http://cnfeat.qiniudn.com/mHDSX.png)
-
-点击「阅读原文」看百度百科的[「散文诗」](http://baike.baidu.com/subview/1407/5032829.htm?fr=aladdin)词条
-
-![](http://cnfeat.qiniudn.com/1000.png)
-
-**【一期一会】**
-
-散文诗
-
-它本质上
-
-还是诗
-
-你吹咩
-
-
-
-
 
 

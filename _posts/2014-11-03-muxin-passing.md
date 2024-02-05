@@ -39,22 +39,4 @@ blog_post: true
 
 说到「最受用」的，我觉得，到现在，鼓励其实已经不是那么重要，「最受用」的反而是读者对自己的批评指点，毕竟如此才能写出更好的文字奉献给读者。
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：Ksenia. Art monday by Roman Sinichkin）
-
-点击「阅读原文」进入[《作文三书》](http://pan.baidu.com/s/1c0kwOuc)电子版（epub，繁体中文）的下载地址。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
-
-**【一期一会】**
-
-居然给我找到了《作文三书》电子版（epub，繁体中文）的下载地址，喜爱写作且想系统学习的同学请复制以下链接进入，或点击阅读原文也可以：
-
-http://pan.baidu.com/s/1c0kwOuc
-
-
-
 

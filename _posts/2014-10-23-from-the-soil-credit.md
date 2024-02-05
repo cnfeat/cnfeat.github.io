@@ -24,16 +24,3 @@ blog_post: true
 
 韩寒是不是落后于这个时代我不知道，但是我知道他在这个时代靠乡土社会的信任还生活得不错。
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：Internation Coins by Shahram Mirkhani）
-
-点击「阅读原文」看《一部<后会无期>，串起韩寒与他的商人朋友们》
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
-
-**【一期一会】**
-
-![](http://cnfeat.qiniudn.com/59aac87e2b4bb78.jpg)

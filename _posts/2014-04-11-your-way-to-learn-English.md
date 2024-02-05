@@ -41,9 +41,6 @@ blog_post: true
 在知乎上关注「Quora」吧，它的动态更新让你刷知乎的时候不要忘记也刷刷「Quora」，顺便也注册「Quora」吧，它会每天发一条「Quora digest」到你gmail，让你每天都看一看英文，长长知识。
 
 
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%20000.png)
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%202014-03-27-00-56.png)
 ###**【一期一会】**
 
 「Quora」上提问，你们感受一下。

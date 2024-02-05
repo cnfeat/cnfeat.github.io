@@ -6,7 +6,6 @@ pinned: false
 blog_post: true
 ---
 
-![](http://openmindclub.qiniudn.com/cnfeat/image/WhiteRose.jpg)
 
 题图：我第一次送给 L小姐 的白玫瑰。
 
@@ -123,13 +122,3 @@ L小姐说，能不能有一致对外的呢？
 ——连岳《我是鸡汤》
 
 点击阅读原文看一篇记录我读书给 L小姐的文章《那你读给我听》
-
-* * *
-
-  * 陈素封
-
-  * 公众号：cnfeat
-
-  * Blog：cnfeat.com
-
-  * 通讯：mesule.com

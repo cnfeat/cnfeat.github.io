@@ -90,12 +90,11 @@ blog_post: true
 
 爱哭的女孩子后来在回信中说：「请相信，我会陪你等那束绿光，不要悲伤，我不会离开你。我也知道，当你被问到那个问题的时候，你也会回答yes的。」
 
-![](http://ww3.sinaimg.cn/mw690/617ccc0ctw1ee4ymi0dd6j20zk0k00vd.jpg)
+
 
 ## 六
 问题：
 
-**[Young And Beautiful](http://www.xiami.com/song/1771811908?spm=a1z1s.6659513.0.0.8sfabN)**
 
 >Will you still love me when I'm no longer young and beautiful
 >当我青春不再，容颜已老，你是否还会爱我

@@ -7,11 +7,6 @@ blog_post: true
 ---
 
 
-
-# 一座城市的记忆
-
-![](http://openmindclub.qiniudn.com/omt/DongGuanHouse.png)
-
 ## 记忆
 
 我喜欢一个城市，首先是喜欢这里的人，其次是这里的历史，再次是这里的风景。
@@ -51,14 +46,6 @@ blog_post: true
 ## 符号
 
 走一走，停一停，一个城市总有属于她的符号，一个城市也会给自己独特的印象，不管外界的评论或政府的塑造，不管自己离去或者停留，她就在你的记忆之中。
-
-
-
-【一期一会】
-
-东莞南社明清古村落
-
-![](http://openmindclub.qiniudn.com/omt/DongGuanHouse01.png)
 
 
 

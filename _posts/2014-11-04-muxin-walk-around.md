@@ -38,16 +38,6 @@ blog_post: true
 
 用木心自己话来说就是散步散远了的意思。
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：Sunset over Stockholm by Olga Galkina）
-
-点击「阅读原文」看一看[《木心语录》](http://book.douban.com/review/4878284/)。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
-
 **【一期一会】**
 
 

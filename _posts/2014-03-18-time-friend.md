@@ -10,7 +10,7 @@ blog_post: true
 
 突然想为我喜欢的书画一画思维导图，第一时间就想到了这本书，这本书我已经看过三遍。在画思维导图的时候，我又快速地将这本书看了一遍，觉得里面的心理认知、思维方法，学习模式和行为习惯还是值得重温一下。
 
-![](http://openmindclub.qiniudn.com/omt/TimeAsFriendMindMap.jpg)
+
 
 ## 提问
 

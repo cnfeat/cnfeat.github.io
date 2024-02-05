@@ -10,8 +10,6 @@ blog_post: true
 
 2014年4月14日 12:59:06
 
-《How I Met Your Mother》：爱情的信念
-
 我从2009年开始看这部美剧，当时它已经出到了第五季，那时我面对如此长的美剧还有点畏惧，要这么一直追，要追到什么时候啊，想不到，一追就追五年。
 
 我为什么要看这一部美剧？原因是OurDearAmy的腾讯微博评价这是一部最喜欢的温情美剧。
@@ -48,24 +46,9 @@ Ted经历过那么多的曲折，遇见过那多的极品，经受过那么多�
 
 黄色雨伞就像着在你生命中出现的奇迹，它意外地出现，你不需要改变，不要忍耐，你可以很开心地就接受它，因为它是最适合你的，你可能会弄丢它，但是当它再次出现的时候，你就不能遇见就应该不再错过，应该紧紧地握在手中。
 
-![](http://drp.io/files/534b8d0808578.JPG)
-
 其实，自己想一想，剧中安排的结局已经不是那么重要了，重要的是自己心中仍存有自己的那个版本。
 
 
 在这个版本中，Ted是仍然坚守他的黄色雨伞，还时不时带着孩子出来和Robin阿姨出来喝喝酒，轻松地聊着关于蓝色号子的事情，对面还有Marshal和Lily，他们依然夫唱妇随，而Barney，他仍旧在延续他的Legendary，然后镜头一抬头，开场音乐响起，dengdengdeng……babababa……
 
-
-
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%20000.png)
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%202014-03-27-00-56.png)
-###**【一期一会】**
-
-Barney: I bet nobody in history has ever licked the Liberty Bell. If someone were to pull that off, I daresay it would be - what's the word?it gona be LEGEN……wait for it……DARY! 
-
-Barney舔过的著名大钟——自由钟。
-
-![](http://drp.io/files/534b82bad472b.png)
 

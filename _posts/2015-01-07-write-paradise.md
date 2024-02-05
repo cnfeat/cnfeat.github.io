@@ -36,20 +36,4 @@ blog_post: true
 
 想知道什么才是好排版，请回复「排版」
 
----
-
-###**【一期一会】**
-
-![](http://cnfeat.qiniudn.com/p2220848694.jpg)
-
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：Red Fox by Ryu Jong soung）
-
-点击「阅读原文」看投稿到简书「每天写1000字」专题的好文章：
-
-###[《写给想去爱、正在爱、失去爱的人》](http://www.douban.com/note/476847941/)
+-

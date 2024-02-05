@@ -97,22 +97,4 @@ blog_post: true
 现在，以上的这些建议让我的领悟变成了现实，愿这些建议能给你带来帮助。
 
 
-原文：[How to Travel: 21 Contrarian Rules](http://fourhourworkweek.com/2013/07/14/how-to-travel-21-contrarian-rules/)
-
-作者：Ryan Holiday
-
-翻译：Claire Lee and Jacob Chan
-
-(题图：La Cueva Ventana by Omar AlQabandi）
-
-我的公众号【cnfeat】，每天千字文践行者，欢迎订阅交流。
-
-![](http://cnfeat.qiniudn.com/%E7%AD%BE%E5%90%8D.png)
-
-点击[「阅读原文」](http://mp.weixin.qq.com/s?__biz=MzA4MTQ0NDQxNg==&mid=200320608&idx=1&sn=0156368e9ddd0cd638e371d127ddb2ed&uin=MTgwMjY4MjE0MA%3D%3D)关注本公众号。
-
-![](http://cnfeat.qiniudn.com/%E5%9B%BE%E5%83%8F%202014-03-27-00-56.png)
-
-
-
 

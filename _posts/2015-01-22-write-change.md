@@ -36,27 +36,4 @@ blog_post: true
 
 ——鼹鼠的土豆
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-![](http://7d9mjz.com1.z0.glb.clouddn.com/2014-12-15.jpg)
-
-（题图：Splash! by Jessica Drossin）
-
-回复关键词「力量」看
-
-###《要用爱的力量去改变》
-
-这篇文章第一句：我的前男友曾经说过一句让我很感动的话。
-
-
-
-http://www.douban.com/note/479434669/
-
-
-
-
-
-
 

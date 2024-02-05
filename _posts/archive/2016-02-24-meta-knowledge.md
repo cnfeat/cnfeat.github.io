@@ -13,6 +13,9 @@ blog_post: true
 
 元认知知识的意义在于，她的累积是动态的，能够为认知调节提供支撑。
 
+就像这张图一样
+
+![](https://upload.wikimedia.org/wikipedia/commons/3/34/Impossible_staircase.svg)
 
 元认知知识像潮水，一层覆盖过来，沉下去，另一层又覆盖过来，生生不息，永不停止，不停地推动这潮流的前进。
 

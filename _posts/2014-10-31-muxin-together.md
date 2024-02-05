@@ -34,15 +34,7 @@ blog_post: true
 
 我买这本也只因封面上写了这么的一句话：我们活在世上，不过想生活能有趣些。
 
-----
 
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：spices by Juliya Perepelitsyna）
-
-点击「阅读原文」到看看[《世间的盐》](http://book.douban.com/subject/10607710/)的介绍。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
 
 **【一期一会】**
 

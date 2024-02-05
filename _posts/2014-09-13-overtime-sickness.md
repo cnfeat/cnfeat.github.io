@@ -42,17 +42,7 @@ blog_post: true
 
 最后，愿天下都喜欢员工加班的老板都赶紧改正思想，愿天下的工作狂找时间来反省自己的工作方法，愿在工作狂手下做事的员工早日脱离苦海，愿自己不要成为一个工作狂。
 
-----
 
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，可能你会获得更多。
-
-（题图：Climbing by Yusri Harisandi）
-
-点击「阅读原文」到我的博客查看[历史文章存档](http://cnfeat.com)。
-
-![](http://cnfeat.qiniudn.com/mHDSX.png)
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-07-11.png)
 
 
 **【一期一会】**

@@ -28,27 +28,6 @@ blog_post: true
 
 我想，这样的情况也许每天都在发生吧。
 
-----
-
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，可能你会获得更多。
-
-（题图：Climbing by Yusri Harisandi）
-
-点击「阅读原文」到看一篇好文[《不要买中午过后的虾子！》](http://book.douban.com/review/6143186/)
-
-![](http://cnfeat.qiniudn.com/mHDSX.png)
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-07-11.png)
-
-
-**【一期一会】**
-
-
-太多食品的出产过程，有待我们更多分析，以及提供一个可能的想像。看到喜欢的蔬果摆在眼前，我常惊喜如见翠玉珠宝，也常保持这种探险的状态。从这一头顺瓜摸藤，回溯源头，看到它最初的环境。
-
-——《男人菜市场》
-
-
 
 
 

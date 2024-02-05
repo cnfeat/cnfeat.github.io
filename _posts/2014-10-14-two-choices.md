@@ -42,15 +42,7 @@ Pual Graham在书中举了三个例子：
 
 可是，无趣有多容易，有趣就多困难，你自己选吧。
 
-----
 
-如果你从此文得到收获，请订阅微信公众号「cnfeat」，你一定会获得更多。
-
-（题图：The long road ahead by Dirk De Backer）
-
-点击「阅读原文」推荐看这一本好书[《黑客与画家》](http://book.douban.com/subject/6021440/)，豆瓣评分8.8。
-
-![](http://cnfeat.qiniudn.com/signitrue-2014-09-28.jpg)
 
 **【一期一会】**
 

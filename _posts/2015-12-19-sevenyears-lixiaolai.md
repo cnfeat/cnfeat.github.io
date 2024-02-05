@@ -8,7 +8,6 @@ blog_post: true
 
 上周六参加了李笑来老师的《把时间当作朋友》七年读者见面会。是的，现场，国家会议中心，第一排，免费。
 
-![](http://cnfeat.qiniudn.com/lixiaolai_title.jpg)
 
 说实话，如果我不到现场，实在没有那么多感触。
 
@@ -59,11 +58,6 @@ blog_post: true
 
 ## 现场图和录音
 
-![](http://cnfeat.qiniudn.com/lixiaolai_7years.jpg)
-
-![](http://cnfeat.qiniudn.com/lixiaolai_next7years.jpg)
-
-![](http://cnfeat.qiniudn.com/lixiaolai_sing.jpg)
 
 全程录音地址：http://pan.baidu.com/s/1gekckwV
 
