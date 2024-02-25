@@ -1,4 +1,3 @@
-
 ---
 title: 《灵感觉醒100条》：激发灵感行动之法
 layout: default
@@ -6,7 +5,6 @@ tags: [卡片,读书,写作]
 pinned: false
 blog_post: true
 ---
-
 
 我曾坐在书桌前，面前摊开着空白的卡片，写不下一个字。
 
