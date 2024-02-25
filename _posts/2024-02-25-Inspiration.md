@@ -2,7 +2,7 @@
 title: 《灵感觉醒100条》：激发灵感行动之法
 layout: default
 tags: [卡片,读书,写作]
-pinned: false
+pinned: true
 blog_post: true
 ---
 
