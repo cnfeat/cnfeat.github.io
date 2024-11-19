@@ -1,5 +1,5 @@
 ---
-title: 创作无边界，切勿纠结卡片尺寸
+title: 你的卡片里，藏着你的人生
 layout: default
 tags: [卡片,读书,写作]
 pinned: false
