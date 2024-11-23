@@ -1,5 +1,5 @@
 ---
-title: 成语进化论：历史流行语的生命故事
+title: 一个成语要用一千年，才能完成最美的进化
 layout: default
 tags: [卡片,读书,写作]
 pinned: false
