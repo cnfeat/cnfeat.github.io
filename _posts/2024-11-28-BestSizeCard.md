@@ -1,5 +1,5 @@
 ---
-title: 数字时代的反叛：一个重度卡片写作者的真实日常
+title: 新手必看：如何选择卡片创作的最佳尺寸？
 layout: default
 tags: [卡片,读书,写作,创作]
 pinned: false
