@@ -3,7 +3,10 @@
 
 <head>
      <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:image" content="{{ site.url }}/images/logo.png">
+    <meta property="og:url" content="{{ url }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
@@ -124,3 +127,15 @@
 </footer>
 
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "datePublished": "{{ page.date }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  }
+}
+</script>
