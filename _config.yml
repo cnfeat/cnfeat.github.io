@@ -8,7 +8,10 @@ description: "feedId:55130722692595719+userId:59030678518927360"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
-
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  
 tracking_id: UA-80884545-1
 
 footer: yes
