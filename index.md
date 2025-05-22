@@ -81,6 +81,7 @@ date: 笨方法实验室 ·
 适合所有想通过卡片创作训练表达力、建立内容体系的创作者。
 
 ![image](images/b7.png)
+![](https://s3.bmp.ovh/imgs/2025/05/22/41351799cbfbbb1d.png)
 
 
 ### [📍《个人生产力发展指南》](https://xiaobot.net/p/productivity)
