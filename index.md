@@ -55,9 +55,9 @@ date: 笨方法实验室 ·
 
 遇到难决策的事情，不要先问别人要怎么做，要先问你信奉的文化告诉你怎么做。
 
-### [📍《卡片创作100讲》](https://www.yuque.com/hardwaylab/zzybgv/luvhdr)
+### [《卡片创作100讲》](https://www.yuque.com/hardwaylab/zzybgv/luvhdr)
 
-一句话介绍：100天构建你的卡片创作系统
+📍一句话介绍：100天构建你的卡片创作系统
 
 ![image](images/b2.png)
 
@@ -79,7 +79,7 @@ date: 笨方法实验室 ·
 
 ### [《个人生产力发展指南》](https://xiaobot.net/p/productivity)
 
-一句话介绍： 8年生产力实战经验构建生产力飞轮系统
+📍一句话介绍： 8年生产力实战经验构建生产力飞轮系统
 
 ![image](images/b3.png)
 
@@ -97,7 +97,7 @@ date: 笨方法实验室 ·
 
 ### [**《卡片创作100条》**](https://note.mowen.cn/note-intro/?noteUuid=btOAHg2lgB8JjsjZ8vhik)
 
-一句话介绍：卡片创作100讲精简版
+📍一句话介绍：卡片创作100讲精简版
 
 ![image](images/b4.png)
 
@@ -113,7 +113,7 @@ date: 笨方法实验室 ·
 
 ### 《[日课一问100条](https://note.mowen.cn/note-intro/?noteUuid=-Bk07LZCQGl7C_eenFAiB)》
 
-一句话介绍： 100天活出更清醒的自己
+📍一句话介绍： 100天活出更清醒的自己
 
 ![image](images/b5.png)
 
@@ -128,7 +128,7 @@ date: 笨方法实验室 ·
 
 ### 《[灵感觉醒100条](https://note.mowen.cn/note-intro/?noteUuid=KBJpsH512oKndEfy_bUGz)》
 
-一句话介绍：  100天建立你的灵感激发系统
+📍一句话介绍：  100天建立你的灵感激发系统
 
 ![image](images/b6.PNG)
 
@@ -146,7 +146,7 @@ date: 笨方法实验室 ·
 
 ### [《日课一卡练习册》](https://www.yuque.com/hardwaylab/zzybgv/ond0chv65gbmoup9)
 
-一句话介绍：每天一张卡，成长有方法
+📍一句话介绍：每天一张卡，成长有方法
 
 ![](https://s3.bmp.ovh/imgs/2025/05/25/8e35736af7f48ffe.png)
 
@@ -164,7 +164,7 @@ date: 笨方法实验室 ·
 
 ### [《笨方法学写作》  ](https://www.yuque.com/hardwaylab/zzybgv/pke83h1m5bgy9xno)
 
-一句话介绍：适合每个普通人的写作实践课
+📍一句话介绍：适合每个普通人的写作实践课
 
 ![](https://s3.bmp.ovh/imgs/2025/05/25/f32c277b9a9261f2.png)
 
@@ -179,7 +179,7 @@ date: 笨方法实验室 ·
 
 ### [《笨方法实践案例集》](https://www.yuque.com/hardwaylab/zzybgv/zk2vx18nv751cua0)
 
-一句话介绍：50+位笨方法高手怎样用笨方法
+📍一句话介绍：50+位笨方法高手怎样用笨方法
 
 ![](https://s3.bmp.ovh/imgs/2025/05/25/5501f8610060d4f1.png)
 
@@ -190,7 +190,7 @@ date: 笨方法实验室 ·
 
 ### [《卡片创作高手案例集》](https://www.yuque.com/hardwaylab/zzybgv/cb21g9az3guwtf1l)
 
-一句话介绍： 40+顶尖写作者都在用的卡片方法论
+📍一句话介绍： 40+顶尖写作者都在用的卡片方法论
 
 ![](https://s3.bmp.ovh/imgs/2025/05/22/41351799cbfbbb1d.png)
 
