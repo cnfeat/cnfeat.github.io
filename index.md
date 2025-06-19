@@ -7,7 +7,7 @@ date: 笨方法实验室 ·
 
 📍  [笨方法实验室](https://www.yuque.com/hardwaylab/book)创始人，坚信「世上无难事，只怕笨方法」。
 
-📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)， 已有 5 万人领取。
+📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)， 5年14万字，助你从0到1构建长期主义者的人生成长系统
 
 🎈日课一卡 10 年，卡片写作 7 年，写过 50000+ 张纸质卡片。
 
@@ -47,11 +47,9 @@ date: 笨方法实验室 ·
 
 ### [《笨方法文化手册》](https://mp.weixin.qq.com/s/-HTkh0tBdnoX7GdkE1O5cw)
 
-一句话介绍：世上无难事，只怕笨方法。
+一句话介绍：5年14万字，助你从0到1构建长期主义者的人生成长系统
 
 ![image](images/b1.PNG)
-
-6万+字，162页，2年+积累，已有50000+人领取阅读。
 
 遇到难决策的事情，不要先问别人要怎么做，要先问你信奉的文化告诉你怎么做。
 
