@@ -3,7 +3,7 @@ title: 我的家庭好物推荐清单（2025年6月更新）
 
 layout: default
 tags: [卡片,读书,写作,创作]
-pinned: false
+pinned: true
 blog_post: true
 ---
 
