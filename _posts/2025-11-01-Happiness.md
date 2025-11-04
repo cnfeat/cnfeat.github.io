@@ -1,6 +1,5 @@
 ---
 title: 如何养成日课一卡的习惯？
-
 layout: default
 tags: [卡片,读书,写作,创作]
 pinned: true
