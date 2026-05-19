@@ -8,11 +8,7 @@
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | join: ', ' }}{% else %}blog, accent, {{ site.author }}, {{ site.title }}, jekyll{% endif %}">
     <meta name="author" content="{{ site.author }}">
     
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    
-    {% if page.url == "/404.html" %}
-    <meta http-equiv="refresh" content="5; url=/">
-    {% endif %}
+    <title>{{ page.title }} | {{ site.title }}</title>
     
     {% if page.description %}
     {% assign desc = page.description %}
@@ -20,11 +16,7 @@
     {% assign desc = site.description %}
     {% endif %}
     
-    {% if page.url %}
     {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-    {% assign url = site.url | append: site.baseurl %}
-    {% endif %}
     
     <meta name="description" content="{{ desc }}">
     <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -36,44 +28,25 @@
     <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
     {% endif %}
     
-    {% if site.twitter_username %}
-    <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
-    {% endif %}
-    
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ desc }}">
     <meta property="og:url" content="{{ url }}">
     <meta property="og:type" content="article">
-    {% if site.og_image %}
-    <meta property="og:image" content="{{ site.og_image }}">
-    {% endif %}
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{{ desc }}">
     <meta name="twitter:url" content="{{ url }}">
-    {% if site.twitter_image %}
-    <meta name="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-    <meta name="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
 </head>
 
 <body>
     <div class="wrapper">
         <header class="navbar container">
-            {% if site.ins_logo %}
-            <img id="ins-logo" src="{{ site.ins_logo }}" />
-            {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ site.url }}">{{ site.title }}</a>
-            <nav id="navlist" class="alignable pull-right navbar-ul">
+            <a id="author-name" class="site-title" href="{{ site.url }}">{{ site.title }}</a>
+            <nav id="navlist" class="navbar-nav">
                 {% for item in site.nav %}
                 <li class="nav-item">
-                    {% if item.name == "Resume" %}
-                    <a target="_blank" href="{{ item.link }}">{{ item.name }}</a>
-                    {% else %}
                     <a href="{{ item.link }}">{{ item.name }}</a>
-                    {% endif %}
                     {% unless forloop.last %}<span class="nav-divider">/</span>{% endunless %}
                 </li>
                 {% endfor %}
@@ -84,15 +57,12 @@
         <hr>
         
         <main class="container content">
-            {% if page.title %}
-            <h1 class="page-title">{{ page.title }}</h1>
-            {% endif %}
-            
-            {% if page.layout == 'post' %}
-            <p class="post-date">{{ page.date | date: "%Y-%m-%d" }} 发布</p>
-            {% endif %}
-            
-            {{ content }}
+            <article class="post">
+                <h1 class="post-title">{{ page.title }}</h1>
+                <p class="post-date">{{ page.date | date: "%Y-%m-%d" }} 发布</p>
+                
+                {{ content }}
+            </article>
             
             {% if site.footer == true %}
             <hr />
@@ -115,7 +85,6 @@
     </script>
     {% endif %}
     
-    {% if page.layout == 'post' %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -128,6 +97,5 @@
         }
     }
     </script>
-    {% endif %}
 </body>
 </html>

@@ -1,14 +1,13 @@
 ---
 title: About me
 layout: main
-date: 笨方法实验室 ·
 ---
 
 我是 cnfeat
 
 📍  [笨方法实验室](https://www.yuque.com/hardwaylab/book)创始人，坚信「世上无难事，只怕笨方法」。
 
-📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)， 已有 5 万人领取。
+📚 代表作[《笨方法文化手册》](https://www.yuque.com/hardwaylab/zzybgv/zuwq9l)，5年14万字，助你从0到1构建长期主义者的人生成长系统。
 
 📍 日课一卡 10 年，卡片写作 7 年，写过 10000+ 张纸质卡片。
 
@@ -16,6 +15,7 @@ date: 笨方法实验室 ·
 
 ## 工作经历
 
+- 2024 年，涉足地方非遗文创
 - 2023 年，涉足人工智能、本地旅游研学、母婴科普电商
 - 2022 年，持续写作、教育、创造，发布《个人生产力发展指南》
 - 2021 年，成立笨方法实验室，发布《笨方法文化手册》

@@ -1,18 +1,36 @@
-title: 笨方法学写作
+title: 卡片创作实验室
 description: "专注卡片创作、认知科学、刻意练习、写作技巧的博客"
 author: cnfeat
 language: zh-CN
 url: "https://cnfeat.com"
 baseurl: ""
-description: "feedId:55130722692595719+userId:59030678518927360"
+
+timezone: Asia/Shanghai
 
 markdown: kramdown
-#ins_logo: "./bits-logo.png"
+highlighter: rouge
+
+permalink: /:year/:month/:day/:title
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   
 tracking_id: UA-80884545-1
+
+# SEO 优化
+twitter:
+  username: cnfeat
+
+# GitHub Pages 需要的配置
+github:
+  repository: cnfea/cnfeat.github.io
+
+# 归档配置
+collections:
+  posts:
+    output: true
+    permalink: /posts/:path/
 
 footer: yes
 footer_url: "http://www.HardWayLab.com"

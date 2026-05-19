@@ -1,7 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 4.2.0'  # 您可以选择适合您项目的Jekyll版本
-gem 'wdm'
+gem 'jekyll', '~> 4.2.0'
 gem 'webrick'
 gem "tzinfo"
 gem 'tzinfo-data'
+gem 'logger'
+gem 'csv'
+gem 'base64'
+gem 'bigdecimal'
+gem 'jekyll-sitemap'
+gem 'jekyll-seo-tag'
