@@ -60,7 +60,7 @@ collections:
     permalink: /posts/:path/
 
 footer: yes
-footer_url: "http://www.HardWayLab.com"
+footer_url: "https://hardwaylab.com"
 footer_text: "笨方法实验室：世上无难事，只怕笨方法"
 
 favicon: true

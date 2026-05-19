@@ -53,3 +53,5 @@ description: "笨方法实验室出品：《笨方法文化手册4.0》《卡片
 现已上线 Chrome 浏览器插件，免费下载。
 
 [GitHub 开源仓库](https://github.com/cnfeat/DailyQuestion) · [Chrome 应用商店](https://chromewebstore.google.com/detail/%E6%97%A5%E8%AF%BE%E4%B8%80%E9%97%AE-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE%EF%BC%8C%E7%A0%B4%E5%B1%80%E4%BA%BA%E7%94%9F/lmjibmhpjhcjlkbceenghmfjpibdjinp?hl=zh-CN&utm_source=ext_sidebar)
+
+了解更多 → [笨方法实验室](https://hardwaylab.com)
