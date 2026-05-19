@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://cnfeat.com/sitemap.xml
+
+# 禁止搜索引擎抓取站内搜索页面
+Disallow: /search/
+# 禁止抓取分页参数
+Disallow: /*?page=

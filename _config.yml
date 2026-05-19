@@ -16,11 +16,38 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   
-tracking_id: UA-80884545-1
+tracking_id: G-DG9PZJ46EB
 
-# SEO 优化
+# SEO
+logo: /images/icon.png
 twitter:
   username: cnfeat
+  card: summary_large_image
+
+social:
+  name: cnfeat
+  links:
+    - https://github.com/cnfeat
+    - https://www.yuque.com/hardwaylab
+
+webmaster_verifications:
+  google:
+  baidu:
+  bing:
+
+# 默认 SEO 元信息
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/icon.png
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      author: cnfeat
+      image: /images/icon.png
 
 # GitHub Pages 需要的配置
 github:

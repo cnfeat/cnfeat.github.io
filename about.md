@@ -1,6 +1,7 @@
 ---
 title: About me
 layout: main
+description: "cnfeat（笨方法实验室创始人）的个人使用说明书，专注卡片创作、写作、认知科学与人生发展。"
 ---
 
 我是 cnfeat
