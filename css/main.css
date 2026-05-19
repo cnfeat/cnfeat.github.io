@@ -46,8 +46,9 @@ body {
 }
 
 .nav-item {
-    display: flex;
-    align-items: center;
+    display: inline;
+    list-style: none;
+    margin-bottom: 0;
 }
 
 .nav-item a {
