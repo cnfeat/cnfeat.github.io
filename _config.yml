@@ -10,7 +10,7 @@ timezone: Asia/Shanghai
 markdown: kramdown
 highlighter: rouge
 
-permalink: /:year/:month/:day/:title
+permalink: /posts/:year/:month/:day/:title/
 
 plugins:
   - jekyll-sitemap
@@ -45,19 +45,13 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: default
+      layout: post
       author: cnfeat
       image: /images/icon.png
 
 # GitHub Pages 需要的配置
 github:
   repository: cnfea/cnfeat.github.io
-
-# 归档配置
-collections:
-  posts:
-    output: true
-    permalink: /posts/:path/
 
 footer: yes
 footer_url: "https://hardwaylab.com"

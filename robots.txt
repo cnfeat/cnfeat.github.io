@@ -7,3 +7,5 @@ Sitemap: https://cnfeat.com/sitemap.xml
 Disallow: /search/
 # 禁止抓取分页参数
 Disallow: /*?page=
+# 禁止抓取 archive 文件夹（避免重复内容）
+Disallow: /archive/
