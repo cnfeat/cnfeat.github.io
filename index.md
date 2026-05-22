@@ -3,15 +3,16 @@ layout: main
 description: "卡片创作实验室 - cnfeat的个人网站。专注卡片创作、写作系统、生产力提升，提供《笨方法文化手册》《卡片创作100讲》等课程与手册。"
 ---
 
-我是 **cnfeat**
-
-📍 [笨方法实验室](https://hardwaylab.com)创始人，日课一卡 10 年，写过 50000+ 张纸质卡片。
-
-📝 持续创作手册与课程，构建长期主义者的人生成长系统。
-
-✍️ 纸笔创作 · 效率系统 · 人生发展
-
-🧪 这里是**卡片创作实验室**，是我试验卡片写作的地方，记录的每一篇都是我写过的卡片合集。
+<div class="intro-section">
+  <img src="/images/Avatar.png" alt="cnfeat头像" class="avatar-img" />
+  <div class="intro-text">
+    <h2>我是 <strong>cnfeat</strong></h2>
+    <p>📍 <a href="https://hardwaylab.com">笨方法实验室</a>创始人，日课一卡 10 年，写过 50000+ 张纸质卡片。</p>
+    <p>📝 持续创作手册与课程，构建长期主义者的人生成长系统。</p>
+    <p>✍️ 纸笔创作 · 效率系统 · 人生发展</p>
+    <p>🧪 这里是<strong>卡片创作实验室</strong>，是我试验卡片写作的地方，记录的每一篇都是我写过的卡片合集。</p>
+  </div>
+</div>
 
 ---
 
