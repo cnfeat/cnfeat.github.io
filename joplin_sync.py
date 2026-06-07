@@ -229,7 +229,8 @@ class JoplinToJekyll:
 
         front_matter = self.build_front_matter(note, tags)
         body = self.clean_body(note.get("body", ""), note.get("source_url", ""))
-        content = front_matter + body + "\n"
+        # 在正文开头添加 H1 标题（与博客现有文章风格一致）
+        content = front_matter + f"# {title}\n\n" + body + "\n"
 
         return filename, content
 
