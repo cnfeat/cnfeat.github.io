@@ -6,3 +6,7 @@ _site
 .vscode
 .archive/
 archive/
+
+# Joplin 同步工具
+.joplin_sync_config.json
+.joplin_sync_state.json
