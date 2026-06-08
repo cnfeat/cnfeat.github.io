@@ -229,8 +229,9 @@ class JoplinToJekyll:
 
         front_matter = self.build_front_matter(note, tags)
         body = self.clean_body(note.get("body", ""), note.get("source_url", ""))
-        # 在正文开头添加 H1 标题（与博客现有文章风格一致）
-        content = front_matter + f"# {title}\n\n" + body + "\n"
+        # 标题由 Jekyll layout 渲染（post.html 的 {{ page.title }}），
+        # 正文中不再重复添加 # 标题，避免重复显示两次
+        content = front_matter + body + "\n"
 
         return filename, content
 

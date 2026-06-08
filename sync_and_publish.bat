@@ -10,7 +10,7 @@ set PYTHON=C:\Users\cnfea\.workbuddy\binaries\python\versions\3.14.3\python.exe
 set GIT=C:\Program Files\Git\cmd\git.exe
 
 echo [Step 1] Syncing from Joplin...
-"%PYTHON%" joplin_sync.py --notebook "Е█ Е╝╒Ф√┤Г╚═"
+"%PYTHON%" joplin_sync.py --notebook "╡╘©мндуб"
 if %errorlevel% neq 0 (
     echo.
     echo Sync failed. Joplin running? Web Clipper on?
