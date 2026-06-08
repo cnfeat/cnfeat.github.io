@@ -169,12 +169,28 @@ class JoplinToJekyll:
         return safe[:80] if safe else "untitled"
 
     @staticmethod
-    def clean_body(body, source_url=""):
-        """清洗笔记正文"""
+    def clean_body(body, source_url="", title=""):
+        """清洗笔记正文，去除与标题重复的首行"""
         lines = body.split("\n")
         cleaned = []
 
-        for line in lines:
+        # 检查第一行是否是标题且与 note title 重复
+        skip_first = False
+        if title and lines:
+            first = lines[0].strip()
+            # 匹配 #, ##, ### 等 markdown 标题
+            m = re.match(r'^(#{1,6})\s+(.+)$', first)
+            if m:
+                heading_text = m.group(2).strip()
+                if heading_text == title:
+                    skip_first = True
+            # 如果第一行是纯文本且与标题完全相同，也跳过
+            elif first == title:
+                skip_first = True
+
+        for i, line in enumerate(lines):
+            if i == 0 and skip_first:
+                continue
             # 跳过 Joplin 内部的资源链接标记（形如 [](:/xxx) 的链接）
             if re.match(r'^\[\]:/.*$', line.strip()):
                 continue
@@ -228,7 +244,7 @@ class JoplinToJekyll:
         filename = f"{date_prefix}-{safe_title}.md"
 
         front_matter = self.build_front_matter(note, tags)
-        body = self.clean_body(note.get("body", ""), note.get("source_url", ""))
+        body = self.clean_body(note.get("body", ""), note.get("source_url", ""), title)
         # 标题由 Jekyll layout 渲染（post.html 的 {{ page.title }}），
         # 正文中不再重复添加 # 标题，避免重复显示两次
         content = front_matter + body + "\n"
