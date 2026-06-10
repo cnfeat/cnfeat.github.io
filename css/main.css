@@ -390,7 +390,99 @@ li {
     margin-bottom: 10px;
 }
 
+/* 作品展示两栏布局 */
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.work-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease;
+}
+
+.work-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.work-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 0 15px 0;
+}
+
+.work-card h4 {
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    color: #222;
+}
+
+.work-card h4 a {
+    color: #222;
+    text-decoration: none;
+}
+
+.work-card h4 a:hover {
+    color: #00a67d;
+}
+
+.work-card .work-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.work-card .work-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.work-card .btn {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.work-card .btn-intro {
+    background: #00a67d;
+    color: #fff;
+}
+
+.work-card .btn-intro:hover {
+    background: #008f6b;
+    text-decoration: none;
+    color: #fff;
+}
+
+.work-card .btn-buy {
+    background: #fff;
+    color: #00a67d;
+    border: 1px solid #00a67d;
+}
+
+.work-card .btn-buy:hover {
+    background: #00a67d;
+    color: #fff;
+    text-decoration: none;
+}
+
 @media (max-width: 600px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .intro-section {
         flex-direction: column;
         align-items: center;

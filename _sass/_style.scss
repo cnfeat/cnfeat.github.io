@@ -161,3 +161,99 @@ hr {
 h1, h2, h3, h4, h5, h6 {
     color: #102a43;
 }
+
+/* 作品展示两栏布局 */
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.work-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 0 0 15px 0;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        margin: 0 0 8px 0;
+        color: #222;
+
+        a {
+            color: #222;
+            text-decoration: none;
+
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+}
+
+.work-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.work-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &-intro {
+        @extend .btn;
+        background: $accent;
+        color: #fff;
+
+        &:hover {
+            background: darken($accent, 5%);
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+
+    &-buy {
+        @extend .btn;
+        background: #fff;
+        color: $accent;
+        border: 1px solid $accent;
+
+        &:hover {
+            background: $accent;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
