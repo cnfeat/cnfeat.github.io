@@ -36,43 +36,27 @@ description: "卡片创作实验室 - cnfeat的个人网站。专注卡片创作
 <div class="works-grid">
 
 <div class="work-card">
-<img src="{{ site.baseurl }}/images/hardwaybook.png" alt="笨方法文化手册4.0" />
+<a href="https://mp.weixin.qq.com/s/KVO_rI6ZiYGO1clk6y6YBg"><img src="{{ site.baseurl }}/images/hardwaybook.png" alt="笨方法文化手册4.0" /></a>
 <h4><a href="https://mp.weixin.qq.com/s/KVO_rI6ZiYGO1clk6y6YBg">《笨方法文化手册4.0》</a></h4>
 <p class="work-desc">历时6年沉淀，27万字536页，助你从0到1构建长期主义者的人生成长系统。2020年起每年更新，新增13万字真实世界高手实践案例。</p>
-<div class="work-links">
-<a href="https://mp.weixin.qq.com/s/KVO_rI6ZiYGO1clk6y6YBg" class="btn btn-intro">介绍</a>
-<a href="https://mp.weixin.qq.com/s/KVO_rI6ZiYGO1clk6y6YBg" class="btn btn-buy">购买</a>
-</div>
 </div>
 
 <div class="work-card">
-<img src="{{ site.baseurl }}/images/card100.png" alt="卡片创作100讲" />
+<a href="https://www.yuque.com/hardwaylab/zzybgv/luvhdr"><img src="{{ site.baseurl }}/images/card100.png" alt="卡片创作100讲" /></a>
 <h4><a href="https://www.yuque.com/hardwaylab/zzybgv/luvhdr">《卡片创作100讲》</a></h4>
 <p class="work-desc">100天构建你的卡片创作系统。从灵感唤醒到结构梳理，从卡片构建到批量输出，全流程实战方法，8大模块100+讲内容。</p>
-<div class="work-links">
-<a href="https://www.yuque.com/hardwaylab/zzybgv/luvhdr" class="btn btn-intro">介绍</a>
-<a href="https://www.yuque.com/hardwaylab/zzybgv/luvhdr" class="btn btn-buy">购买</a>
-</div>
 </div>
 
 <div class="work-card">
-<img src="{{ site.baseurl }}/images/productbook.png" alt="个人生产力发展指南" />
+<a href="https://xiaobot.net/p/productivity"><img src="{{ site.baseurl }}/images/productbook.png" alt="个人生产力发展指南" /></a>
 <h4><a href="https://xiaobot.net/p/productivity">《个人生产力发展指南》</a></h4>
 <p class="work-desc">8年生产力实战经验，11万+字精炼内容，帮你构建真正适合自己的个人生产力系统，实现高效、专注、身心富足。</p>
-<div class="work-links">
-<a href="https://xiaobot.net/p/productivity" class="btn btn-intro">介绍</a>
-<a href="https://xiaobot.net/p/productivity" class="btn btn-buy">购买</a>
-</div>
 </div>
 
 <div class="work-card">
-<img src="{{ site.baseurl }}/images/dailyQ.png" alt="日课一问" />
+<a href="https://chromewebstore.google.com/detail/%E6%97%A5%E8%AF%BE%E4%B8%80%E9%97%AE-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE%EF%BC%8C%E7%A0%B4%E5%B1%80%E4%BA%BA%E7%94%9F/lmjibmhpjhcjlkbceenghmfjpibdjinp?hl=zh-CN"><img src="{{ site.baseurl }}/images/dailyQ.png" alt="日课一问" /></a>
 <h4><a href="https://chromewebstore.google.com/detail/%E6%97%A5%E8%AF%BE%E4%B8%80%E9%97%AE-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE%EF%BC%8C%E7%A0%B4%E5%B1%80%E4%BA%BA%E7%94%9F/lmjibmhpjhcjlkbceenghmfjpibdjinp?hl=zh-CN">《日课一问》</a></h4>
 <p class="work-desc">极简自省卡片系统，内置400+灵魂拷问。每日随机3张问题卡片，刺破日常惯性，重构自我认知。Chrome浏览器插件，免费下载。</p>
-<div class="work-links">
-<a href="https://chromewebstore.google.com/detail/%E6%97%A5%E8%AF%BE%E4%B8%80%E9%97%AE-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%97%AE%EF%BC%8C%E7%A0%B4%E5%B1%80%E4%BA%BA%E7%94%9F/lmjibmhpjhcjlkbceenghmfjpibdjinp?hl=zh-CN" class="btn btn-intro">介绍</a>
-<a href="https://github.com/cnfeat/DailyQuestion" class="btn btn-buy">下载</a>
-</div>
 </div>
 
 </div>

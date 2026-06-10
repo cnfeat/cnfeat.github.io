@@ -415,6 +415,15 @@ li {
     height: auto;
     border-radius: 4px;
     margin: 0 0 15px 0;
+    transition: opacity 0.2s ease;
+}
+
+.work-card a:has(img) {
+    display: block;
+}
+
+.work-card a:has(img):hover img {
+    opacity: 0.85;
 }
 
 .work-card h4 {
