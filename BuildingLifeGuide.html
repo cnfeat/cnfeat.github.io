@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人生构建写作指南 — 用文字构建自我成长系统</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: oklch(0.97 0.005 85);
+  --sidebar-bg: oklch(1 0 0);
+  --text: oklch(0.2 0.02 50);
+  --text-secondary: oklch(0.55 0.01 60);
+  --text-tertiary: oklch(0.65 0.008 65);
+  --accent: oklch(0.55 0.12 45);
+  --accent-light: oklch(0.94 0.04 45);
+  --code-bg: oklch(0.96 0.003 85);
+  --border: oklch(0.92 0.008 85);
+  --border-light: oklch(0.95 0.005 85);
+  --shadow-sm: 0 1px 3px oklch(0.2 0.01 50 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.2 0.01 50 / 0.08);
+  --shadow-lg: 0 8px 24px oklch(0.2 0.01 50 / 0.1);
+  --sidebar-width: 300px;
+  --content-max: 720px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, Consolas, monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg); min-height: 100vh; -webkit-font-smoothing: antialiased; overflow: hidden; height: 100vh; }
+.reading-progress { position: fixed; top: 0; left: var(--sidebar-width); right: 0; height: 3px; background: var(--border-light); z-index: 200; }
+.reading-progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), oklch(0.6 0.1 55)); width: 0; transition: width 0.15s ease; }
+.layout { display: flex; height: 100vh; }
+.sidebar { width: var(--sidebar-width); height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 100; }
+.sidebar-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--border-light); flex-shrink: 0; }
+.sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), oklch(0.55 0.1 55)); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.logo-icon svg { width: 20px; height: 20px; stroke: white; stroke-width: 2; fill: none; }
+.sidebar-header h1 { font-size: 18px; font-weight: 650; color: var(--text); letter-spacing: -0.025em; }
+.sidebar-header .version { display: inline-block; font-size: 11px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
+.search-box { padding: 12px 24px; border-bottom: 1px solid var(--border-light); flex-shrink: 0; }
+.search-input { width: 100%; padding: 10px 14px 10px 36px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--code-bg); font-size: 13px; font-family: var(--font-sans); color: var(--text); outline: none; transition: all 0.2s; }
+.search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.search-input::placeholder { color: var(--text-tertiary); }
+.search-wrapper { position: relative; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--text-tertiary); }
+.search-shortcut { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--text-tertiary); background: var(--sidebar-bg); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); font-family: var(--font-mono); }
+.search-results { position: absolute; top: 100%; left: 0; right: 0; background: var(--sidebar-bg); border: 1px solid var(--border); border-radius: 0 0 var(--radius-md) var(--radius-md); max-height: 240px; overflow-y: auto; z-index: 200; display: none; box-shadow: var(--shadow-lg); }
+.search-results.active { display: block; }
+.search-result-item { padding: 10px 14px; font-size: 13px; color: var(--text-secondary); cursor: pointer; border-bottom: 1px solid var(--border-light); transition: background 0.1s; }
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background: var(--accent-light); color: var(--text); }
+.search-result-item .highlight { background: oklch(0.85 0.1 55); padding: 1px 3px; border-radius: 2px; }
+.search-no-results { padding: 20px; text-align: center; color: var(--text-tertiary); font-size: 13px; }
+.toc-container { flex: 1; overflow-y: auto; padding: 12px 0; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.toc-container::-webkit-scrollbar { width: 4px; }
+.toc-container::-webkit-scrollbar-track { background: transparent; }
+.toc-container::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.toc { list-style: none; }
+.toc-section { padding: 0 16px; margin-bottom: 2px; }
+.toc-section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary); padding: 16px 12px 6px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+.toc-section-title::after { content: ''; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentcolor; transition: transform 0.2s; }
+.toc-section.collapsed .toc-section-title::after { transform: rotate(-90deg); }
+.toc-section.collapsed .toc-section-items { display: none; }
+.toc li a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 14px; color: var(--text-secondary); text-decoration: none; border-radius: var(--radius-sm); transition: all 0.15s ease; line-height: 1.4; position: relative; cursor: pointer; }
+.toc li a::before { content: ''; width: 3px; height: 0; background: var(--accent); border-radius: 2px; position: absolute; left: 0; transition: height 0.2s ease; }
+.toc li a:hover { color: var(--text); background: var(--code-bg); }
+.toc li a.active { color: var(--accent); background: var(--accent-light); font-weight: 500; }
+.toc li a.active::before { height: 18px; }
+.toc li a .page-num { margin-left: auto; font-size: 11px; color: var(--text-tertiary); font-family: var(--font-mono); }
+.sidebar-footer { padding: 16px 24px; border-top: 1px solid var(--border-light); flex-shrink: 0; }
+.reading-info { font-size: 12px; color: var(--text-tertiary); display: flex; align-items: center; gap: 6px; }
+.reading-info svg { width: 14px; height: 14px; }
+.main-content { flex: 1; display: flex; flex-direction: column; min-width: 0; height: 100vh; position: relative; }
+.content-area { flex: 1; overflow-y: auto; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.content-area::-webkit-scrollbar { width: 6px; }
+.content-area::-webkit-scrollbar-track { background: transparent; }
+.content-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.content-wrapper { max-width: var(--content-max); margin: 0 auto; padding: 48px 56px 80px; }
+.page-nav { position: absolute; bottom: 0; left: 0; right: 0; background: var(--sidebar-bg); border-top: 1px solid var(--border-light); padding: 16px 56px; display: flex; align-items: center; justify-content: space-between; z-index: 50; }
+.page-nav-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--sidebar-bg); font-size: 14px; font-family: var(--font-sans); color: var(--text-secondary); cursor: pointer; transition: all 0.2s; min-width: 140px; }
+.page-nav-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+.page-nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-nav-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.page-nav-btn.next { flex-direction: row-reverse; margin-left: auto; }
+.page-nav-info { font-size: 13px; color: var(--text-tertiary); text-align: center; font-family: var(--font-mono); }
+h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.035em; line-height: 1.15; margin-bottom: 12px; color: var(--text); text-wrap: balance; }
+.hero-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; font-size: 14px; color: var(--text-tertiary); }
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta svg { width: 14px; height: 14px; opacity: 0.6; }
+.subtitle { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.6; }
+h2 { font-size: 1.5rem; font-weight: 650; letter-spacing: -0.025em; margin-top: 48px; margin-bottom: 20px; color: var(--text); }
+h3 { font-size: 1.15rem; font-weight: 600; margin-top: 36px; margin-bottom: 14px; letter-spacing: -0.01em; }
+p { margin-bottom: 18px; color: oklch(0.35 0.015 55); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { margin-bottom: 18px; padding-left: 24px; color: oklch(0.35 0.015 55); }
+li { margin-bottom: 8px; padding-left: 4px; }
+li::marker { color: var(--accent); }
+strong { font-weight: 600; }
+blockquote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid var(--accent); background: var(--accent-light); border-radius: 0 var(--radius-md) var(--radius-md) 0; color: oklch(0.35 0.015 55); font-style: italic; position: relative; }
+blockquote::before { content: '\201C'; position: absolute; top: 12px; left: 16px; font-size: 3rem; color: var(--accent); opacity: 0.2; font-style: normal; line-height: 1; }
+blockquote p { margin-bottom: 0; padding-left: 20px; }
+hr { border: none; height: 1px; background: var(--border); margin: 48px 0; }
+.callout { margin: 28px 0; padding: 18px 22px; border-radius: var(--radius-md); border: 1px solid; position: relative; overflow: hidden; }
+.callout::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
+.callout-info { background: oklch(0.97 0.02 240); border-color: oklch(0.9 0.04 240); }
+.callout-info::before { background: oklch(0.65 0.15 240); }
+.callout-title { font-weight: 600; font-size: 13px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.callout-info .callout-title { color: oklch(0.5 0.15 240); }
+.callout p { margin-bottom: 0; font-size: 14px; line-height: 1.6; }
+.mobile-toggle { position: fixed; top: 16px; left: 16px; z-index: 150; width: 40px; height: 40px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--sidebar-bg); cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); transition: all 0.2s; }
+.mobile-toggle:hover { box-shadow: var(--shadow-md); }
+.mobile-toggle svg { width: 18px; height: 18px; stroke: var(--text-secondary); stroke-width: 2; fill: none; }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: oklch(0.2 0.01 50 / 0.4); backdrop-filter: blur(4px); z-index: 90; }
+.sidebar-overlay.active { display: block; }
+.shortcuts-help { position: fixed; bottom: 80px; right: 24px; background: var(--sidebar-bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px; box-shadow: var(--shadow-lg); z-index: 300; display: none; font-size: 13px; }
+.shortcuts-help.active { display: block; }
+.shortcuts-help h4 { font-size: 13px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+.shortcut-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; color: var(--text-secondary); }
+.shortcut-row:last-child { margin-bottom: 0; }
+kbd { display: inline-block; padding: 2px 6px; font-family: var(--font-mono); font-size: 11px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text-secondary); min-width: 24px; text-align: center; }
+::selection { background: oklch(0.85 0.08 55); color: var(--text); }
+@media (max-width: 768px) {
+  .sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); z-index: 100; box-shadow: var(--shadow-lg); }
+  body.sidebar-open .sidebar { transform: translateX(0); }
+  .mobile-toggle { display: flex; }
+  .main-content { width: 100%; }
+  .content-wrapper { padding: 64px 24px 100px; }
+  .page-nav { padding: 12px 24px; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  .reading-progress { left: 0; }
+}
+@media print {
+  .sidebar, .mobile-toggle, .sidebar-overlay, .page-nav, .reading-progress, .shortcuts-help, .search-box { display: none !important; }
+  .main-content { width: 100%; }
+  .content-wrapper { max-width: 100%; padding: 0; }
+  .content-area { overflow: visible; height: auto; }
+  body { overflow: visible; height: auto; }
+}
+</style>
+</head>
+<body>
+<button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round">
+    <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+  </svg>
+</button>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+          </svg>
+        </div>
+        <h1>人生构建写作指南</h1>
+      </div>
+      <span class="version">用文字构建自我成长系统</span>
+    </div>
+    <div class="search-box">
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索内容...">
+        <span class="search-shortcut">⌘K</span>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+    <div class="toc-container">
+      <ul class="toc" id="toc"></ul>
+    </div>
+    <div class="sidebar-footer">
+      <div class="reading-info">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span id="readingTime">预计阅读 0 分钟</span>
+      </div>
+    </div>
+  </nav>
+  <main class="main-content">
+    <div class="reading-progress">
+      <div class="reading-progress-bar" id="progressBar"></div>
+    </div>
+    <div class="content-area" id="contentArea">
+      <div class="content-wrapper" id="contentWrapper"></div>
+    </div>
+    <div class="page-nav">
+      <button class="page-nav-btn prev" id="prevBtn" onclick="prevPage()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>上一章</span>
+      </button>
+      <span class="page-nav-info" id="pageInfo">1 / 1</span>
+      <button class="page-nav-btn next" id="nextBtn" onclick="nextPage()">
+        <span>下一章</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </main>
+</div>
+<div class="shortcuts-help" id="shortcutsHelp">
+  <h4>键盘快捷键</h4>
+  <div class="shortcut-row"><kbd>←</kbd><kbd>→</kbd> 上/下一章</div>
+  <div class="shortcut-row"><kbd>↑</kbd><kbd>↓</kbd> 页面内滚动</div>
+  <div class="shortcut-row"><kbd>⌘</kbd><kbd>K</kbd> 搜索</div>
+  <div class="shortcut-row"><kbd>Esc</kbd> 关闭面板</div>
+  <div class="shortcut-row"><kbd>?</kbd> 显示/隐藏快捷键</div>
+</div>
+<script>
+const pages = [
+{
+id: 'cover',
+title: '封面',
+section: '序言',
+content: `
+<h1>人生构建写作指南</h1>
+<p class="subtitle">用文字构建自我成长系统</p>
+<div class="hero-meta">
+<span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+一套用文字构建自我成长系统的心法
+</span>
+</div>
+<div class="callout callout-info">
+<div class="callout-title">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+关于本书名
+</div>
+<p>「人生构建」四个字，来自书中一个核心命题：<strong>把写作作为构建</strong>。</p>
+<p>多数人接受的义务教育让你写作更关注成绩，这是「把写作作为展示」。而真正的写作，是此时此地此身的参与世界构建的，不断变化与重塑的过程。</p>
+<p>写作不是追逐名利的工具，而是人的创造性适应过程。它的真正意义并不在外在功利，而在于从内部改造自己的生活方式——这是「身心之学」，核心是自我修养。</p>
+<p>所以这本指南要教的，不是如何写出好文章，而是如何通过写作，构建属于你自己的人生。</p>
+</div>
+<p>《人生构建写作指南》=个人化写作理念的集合+可操作的前沿写作实践。</p>
+<p>我将此作为我的个人<strong>终身学习与创造计划</strong>。</p>
+<p>全书章节如下：</p>
+<ol>
+<li>定义：什么是写作？</li>
+<li>驱动：为什么要写作？</li>
+<li>实践：如何开始写作？</li>
+<li>风格：如何写得真诚？</li>
+<li>清单：为何需要清单？</li>
+<li>技法：如何写得更好？</li>
+<li>产品：如何创造价值？</li>
+</ol>
+`
+},
+{
+id: 'foreword',
+title: '我是一名写作者',
+section: '序言',
+content: `
+<h2>我是一名写作者</h2>
+<blockquote>
+<p>《巴黎评论》：在我们这样一个越来越热衷并且依赖科学技术的国家，你认为作家是扮演了什么样的角色呢？</p>
+<p>怀特：作家的角色从来没有改变：他是一个监护人，一个秘书。科学和技术也许加重了他的责任，但是并没有改变他的责任。在《时间之环》里我这样写道："作为一个握笔的人，一个秘书，我一直感觉自己被赋予一种使命，要保护此世抑或彼世的一切意料之外的东西，仿佛哪怕很小的一件物什丢失了，我也要对此负责。但是要把这类东西表达出来是很难的。"</p>
+<p>一个作家必须反映、诠释他的社会，他的世界；他还必须提供灵感、指引和挑战。今天的很多文章给我感觉是在声讨，充满了破坏力和愤怒。愤怒也情有可原，我并不反对愤怒。但是我觉得有些作家失去了他们的平衡感，他们的幽默感，以及他们的欣赏能力。我也常常生气，但是如果除了生气什么都不会也让我厌恶：而且我认为如果我以原则为由拒绝接受太阳的温暖光芒，在任何时候当阳光真的照耀我时如果我拒绝加以报道，那么我就会失去作为一个作家也许拥有的一点点价值。环境在恶化，时候已经不早，该做的都还没有做。与其从月亮上往下车石块，我们更应该从伊利湖里往外车垃圾。</p>
+</blockquote>
+<p>不久的将来，你将会这样宣告；不久的将来，你将会成为掌握写作技术的大师；你将会用写作者不同寻常的眼光去审视周围的世界。</p>
+<p>你会说：<strong>「我是一名写作者。」</strong></p>
+<p>你将这样回答：</p>
+<ul>
+<li>「我要成为一名写作者，因为它使我好奇心得以激发。」</li>
+<li>「我要成为一名写作者，因为它使我发现事物的规律。」</li>
+<li>「我要成为一名写作者，因为它使我发现可能的自我。」</li>
+<li>「我要成为一名写作者，因为它使我能创造出更多产品。」</li>
+<li>「我要成为一名写作者，因为使我发现更大的世界，并驱动我前行。」</li>
+</ul>
+<p>我见过自由流淌的思想，也曾见过止步不前的灵魂。也见过新生命的诞生，也见过旧事物的逝去。我曾记录下创造者用双手创造的繁荣，也见过破坏者留下的废墟。我记录了世界万物，还有美好的希望。
+`
+},
+{
+id: 'ch1-1',
+title: '找回文字的力量',
+section: '定义',
+content: `
+<h2>找回文字的力量</h2>
+<h3>1</h3>
+<p>2014年，我开始刻意练习写作，练习的方法简单粗暴，每天写1000字，那时的我相信，学习写作的第一步，不是学，而是先写。初学者练习写作，可以用数量来弥补质量的不足。</p>
+<p>事实证明，这是对的。</p>
+<p>那时候，我在简书上每天更新，从不期待有多少人来看，一部分是写作的动机本身，二是很喜欢简书的一个slogan：找回文字的力量。</p>
+<p>那时，我还在简书创建一个专题：每天写1000字，如今5年过去，它的关注人数已经约有13万，成为了简书最大的专题之一。</p>
+<p>通过写作，我也明白，原来世界上很真存在一类用写作来驱动学习的人，例如丘吉尔，贝多芬，他们都是靠写来学习的。贝多芬曾经这样说：「如果我不马上写下来的话，我很快就会忘得一干二净。如果我把它们写到小本子上，我就永远不会忘记了，也用不着再看一眼。」</p>
+<p>在这个阶段，「找回文字的力量」，便是「发现属于自己的学习方式」。</p>
+<h3>2</h3>
+<p>2017 年 10 月某日清晨五点半，窗外石花山蒙蒙可见，我独自一人在大厅对着《笨方法学 Python》一个键一个键敲代码，彼时的我对编程一无所知，但当严格按指示将代码敲进屏幕，按下回车得出结果之后，竟莫名而生一种学习自信，忽然醒觉，既然编程技能可以用「笨方法」习得，写作也可以，随开始草拟第一份《笨方法学写作》的大纲。</p>
+<p>12月，我为《笨方法学写作》写序，名为《相信书写的力量》，其中这样描述写作的作用：</p>
+<blockquote>
+<p>新手练习每天一千字的过程当然困难，我不得不频繁寻找写作模式，探索写作方法，为了激励自己，还定下了各种大小的功利目标，一路摸索，从每天开始苦思日更，到逐渐得心应手，一年之后，写作竟然成为日常，给了我挖掘探索各种可能的勇气。</p>
+<p>……我开始留意并观察，用文字总结记忆，渐渐地，写作变成我学习任何技能的脚手架与动力源泉，我隐隐感觉到了写作的力量，它坚硬而柔软，在漫长的岁月中，让我致知作笔，裁光作纸。</p>
+</blockquote>
+<p>于我而言，写作是人的创造性适应过程，而不是追逐名利的工具，写作应是主动的，符合内心抉择的行动，它的真正意义并不在外在功利，而在于从内部改造自己的生活方式，是「身心之学」，核心是自我修养。</p>
+<h3>3</h3>
+<p>2012年，一个名叫《书写力量》的校园活动在香港中文大学悄然进行，活动内容很简单，就是抄诗——半阕新诗，一块黑板，两三枝粉笔，手抄在校园各个角落的玻璃门和黑板上，用日常的一首首诗歌来找回文字的力量。</p>
+<p>试想，你每日走过诗句栖息之地，俯仰之间，看见的是不同人一笔一画书写的敬意，闭眼养神，呼吸的是盈盈不去的文化气息。每日有期待，时时有盼望，潜移默化，书写的力量自然浮现。</p>
+<p>发起人陈燕遐博士说：「人人都觉得诗小众，没有实用价值。可是，它是最精炼、最优美的文字，是感情最纯粹、最升华的部分。假如希望透过文字进入人文世界，最好的方法也许是透过诗歌。你不一定要读得懂才能受诗感动。我甚至觉得，我们每个人心里都住着一位诗人，有适当的环境和土壤，他就会冒出头来。」</p>
+<p>至此，你可能会稍微理解，生活在这片土地上的人们，在遇到自由权利遭到侵犯时，他们的决心与行动竟会是那样的坚定勇敢。</p>
+<h3>4</h3>
+<p>最近刚好在写普鲁斯特问卷，当中有一题：你最恐惧的是什么？</p>
+<p>我的回答是：「此前没有过生存的恐惧，但2020年农历春节到来的肺炎触目惊心，一切看似坚固的东西烟消云散，目睹生命竟如草芥，还真有一瞬间，我恐惧这场灾难会持续扩大，影响到自己的亲人、朋友。」</p>
+<p>但后续让我更恐惧的，自己能在这场灾难中发挥的作用竟然是如此的少？</p>
+<p>傅真在《知耻而后勇，珍重待春风》如此说，自己身为一个长期自我隔绝的写作者，日常生活变化不大，但这一次疫情，却让在那段时间不断地在刷微博，反复经历一场场小型精神崩溃。她说：</p>
+<blockquote>
+<p>我们什么都不知道，什么都不被允许知道，自然也就无法讨论这些错误，更无法避免将来的错误。也许这就是我那深刻的无力感的来源——极少数人掌控着我们所有人的命运，而我们只能祈祷他们少犯错误。</p>
+<p>但我又不想被这种无力感所淹没。也许这就是为什么我会写下这些可能根本没人有耐心读完的文字，说着那些远比我博学的人早已更充分更精妙地阐释过的观点。我希望能记录下这个特殊的时期，至少是记录下自己在这一时期的心路历程。某种意义上，我是在用叙述来疗伤，来救赎自己；或许也有反抗的成分——因为删除从未停止，封口政策日益严厉，记录本身便已是某种反抗。</p>
+</blockquote>
+<h3>5</h3>
+<p>书写的力量，单单自己相信是不够的，看着别人去做也是不够的，还要自己一个字一个字地敲出来，把事实与常识告诉更多人。</p>
+<p>如此的写作，便是不沉默，便是日常生活的抗争。</p>
+<p>可以发挥一点点的力量，便去发挥，能让一部分人的价值观产生哪怕一点点的偏移，那就已经足够了。</p>
+<p>E.B.怀特曾这样说：作家的角色从来没有改变：他是一个监护人，一个秘书。科学和技术也许加重了他的责任，但是并没有改变他的责任。在《时间之环》里我这样写道：「作为一个握笔的人，一个秘书，我一直感觉自己被赋予一种使命，要保护此世抑或彼世的一切意料之外的东西，仿佛哪怕很小的一件物什丢失了，我也要对此负责。」</p>
+<p>这便是写作的基本。
+`
+},
+{
+id: 'ch1-2',
+title: '把写作作为构建',
+section: '定义',
+content: `
+<h2>把写作作为构建</h2>
+<p>为什么写作？</p>
+<p>这是我长久思考的问题。</p>
+<p>心里长久有混沌的答案，总嫌未足够简洁直接，近期终于得出一个阶段性答案。</p>
+<p>多数人会怎样看待写作？</p>
+<p>多数人接受的义务教育采用应试教育法，让你写作更关注成绩，与成绩二字相关的词语更多是成果、分数、公布、例文、范文等，这是「把写作作为展示」。</p>
+<p>而真正的写作，自己是最大受益者，鼓励战胜昨日之自我，知识与能力的构建才是最大意义实现。</p>
+<p><strong>真正的写作，是动态演化的，自我不可能由他人替代，是此时此地此身的参与世界构建的，不断变化与重塑的过程，这是「把写作作为构建」。</strong></p>
+<p>「把写作作为展示」与「把写作作为构建」有以下不同：</p>
+<h3>出发点不同</h3>
+<p>展示，就要接受评价与比较。凡有评价与比较，或来自外部，或来自自内心，这种评价给展示者造成心理波动。而展示者往往会更重视负面评价，因为事实是总有人写得比我更好，过度以外部评价作为写作质量的唯一出发点，畏惧评价而放弃展示，从而放弃写作。</p>
+<p>构建，把写作视为学习的过程，面对未知事物，采用学习构建而非消费的态度，六经注我，与知识互动，构建可能的自我而非真实的自我。</p>
+<h3>读者预设不同</h3>
+<p>展示假想读者是裁判，裁判自带挑剔与消费的预设。若写作的出发始于评判，那你必定挣扎，毕竟评判关乎找出你做错的地方。同时，裁判往往以僵固型思维评价，写作者会为迎合规则与评价而行动，变成外在驱动。</p>
+<p>写作者以成长型思维内观，写作作为构建，暴露的不足视为进步的建议，写得不好不重要，重要的是可以写得越来越好。</p>
+<h3>过程不同</h3>
+<p>以展示为重点的写作，会追求过程的稳定与结果的完美呈现，强调先打好腹稿再输出，提倡复制高分和评价高的文章，忽视人之为人的创造属性。</p>
+<p>以构建为重点的写作，鼓励真正动笔之后可改变初衷，边写边改。真正的写作不是对知识的记忆与释放，不在于学习写作技巧或好词佳句，而是通过应用和实践的方式自我建构，达成充满意义的目的。构建型的写作，是把我正在思考的东西写下来，把我不知道的东西写下来，人生地图的迷雾才不会反复聚拢，不至于拔剑四顾心茫然。</p>
+<h3>工具不同</h3>
+<p>展示更强调写作工具与形式，时时与他人比较，模仿与追逐更流行，更新的写作工具，时时研究各种写作的技法，抽象词语、黑话术语满天飞，将文字当做炫技的形式。</p>
+<p>构建更强调认知工具与内容，寻求不变的东西，往往一张卡片就可以解决所有写作工具问题，试图用最直白最简短的词句讲清复杂的事情。</p>
+<p>把写作作为构建，无需在乎写作之艰辛，因为这是理所当然的苦功；无需在乎写作之漫长，因为这是必经之路的行走；无需在乎写作之奖赏，因为写作本身就是最好的报酬。
+`
+},
+{
+id: 'ch1-3',
+title: '写作的总体战',
+section: '定义',
+content: `
+<h2>写作的总体战</h2>
+<p>总体战即全面战争，全域作战，一切行为都是战争，所有时间都是战时。总体战并非一定从宣战开始，真实的总体战从突袭开始。</p>
+<p>战争是政治的工具，写作是思维的工具，一切写作都是思维的延伸。</p>
+<p>在海陆空三个战场作战，各个军种根据战略可能发挥不同价值，空军出击侦察，跨越国界，快速借助互联网社交媒体获取知识，去除知识迷雾。海军机动部署，协调空军与陆军作战，例如论文、书籍等利用重型武器，赢取战略优势。陆军从正面与侧面展开，你必须真枪实弹地坐在桌前，与阻碍写作的一切因素搏杀。在总体战中，无需具体的分清海陆空的从属范围，所有军种都是战力，一切战力用于谋求胜利。</p>
+<p>一切涉及思维活动的地方都是战场，例如研讨、参与、交流、探究、表达、研习、笔记、提要、评论可用写作呈现。写作与真实生活关联，以真实情境中的写作，促使真实学习的发生，促进你的全面进步与发展。</p>
+<p>写作总体战以输出文本产品为目标，写作、阅读、表达、沟通、作息等各条战线紧密配合，各种与写作相关的因素，例如写作工具、写作环境、写作作息、写作习惯、写作技能、写作冲刺，都必须服从目标，实行广泛的统一战线，协调一致地发挥整体力量，以一切方式，例如学习性写作、认知写作、应用写作、思辨写作、备忘录写作、周报写作，以保证写作任务的完成。</p>
+<p>总体战没有既定方案，一切方案随战况而变化，总体战一定会在精神、体力和物质力量上，向你提出要求，一定要保持肉体与精神的强健，时刻准备以动员一切力量输出，时刻准备切换应对方案，时刻保持文本产品的日常创作形态。凡事从总体战角度出发，清楚写出每张卡片动因与重点，所有动作，并非满足个人的情绪喜好，而服务文本产品的投入产出。</p>
+<p>总体战要求进行决战。你，作为指挥官，必须明白总体战铺开的的战线是非常长的，没有办法对所有文本产品出击，必须在关键地点发动进攻。大范围的战略包围最终将落到某一地点实施战术性包围上，在该地将敌军的一翼击溃。例如本篇文章已经在「写作战争隐喻」展开关键进攻。</p>
+<p>追求决战，并非意味主打求战，也可以回避挑战，暂时不寻求决战，以迟滞战形式进行防御会战，深挖洞、广积粮，谋求合适的决战时机。写作的防御战，就是并非要日更，而是多多写卡片，勤思考，构建属于自己的文本产品系统，以系统驱动，巩固整体实力。</p>
+<p>总体战讲求用压倒性优势战胜对方，不要百战百胜，不要多方出击，要追求不败，要先胜后战，要一战而定，要降维打击，想用对方想不到做不到的方法来战胜对方。你写过 10000 张卡片，你读过《资治通鉴》，你读过几百篇写作论文，你获取到最先进的写作知识，你一直在卡片写作领域耕耘，对方就永远跟你后面，对方就永远战胜不了你。</p>
+<p>一年三百六十日，多是横戈马上行。你可以不战，也可以不胜，但不能败。
+`
+},
+{
+id: 'ch1-4',
+title: '写作的持久战',
+section: '定义',
+content: `
+<h2>写作的持久战</h2>
+<p>你已经写作了10个月，依然写不出满意的文字，悲观失望，写作的迷茫与焦虑犹如黑云笼罩着你——我到底能不能学会写作？写作到底要学多久？如何才能学会写作？你思前想后都找不到答案。</p>
+<p>我的答案是：你能学会写作，但不能速成，写作是持久战。</p>
+<p>多数人抛出写作天赋论、写作速成论，前者产生妥协倾向，后者产生轻敌倾向，这是写作思想与行动上的近视眼，这是他们没有深刻理解写作的长期性、复杂性、艰巨性。</p>
+<p>抛出写作天赋论的人，他们历经的应试教育根本没有留出充分的写作训练时间，也没有教授科学的以人为本的写作方法，当然以为写作就是靠天赋。</p>
+<p>抛出写作速成论的人，他们高估了自身学习能力，低估了人类贪婪懒惰的天性与未来环境的复杂性，事实就是我们必须跟自身能力不足、自我认知偏差、缺乏写作时间与协习惯做长期而艰苦的斗争。</p>
+<p>面对写作，正确的态度是：</p>
+<p>第一、坚持写作。写作是必须人生进步的必经之路，关乎人生全局全程的问题，你不可能畏缩与后退，要敢于斗争，又善于斗争。</p>
+<p>第二、坚持信念。写作是技能，是技能就必定能学会，但写作绝不是轻轻松松、敲锣打鼓就能实现的。你要放低姿态，要将自己时刻放在弱者位置，不要高估自己的力量，不要制定目标，而是用系统来达成计划，必须准备付出更为艰巨、更为艰苦的努力。</p>
+<p>第三、坚持战斗。坚定以自我为主，不依赖外部、约束、打卡，"校之以计，而索其情"，不打无准备之仗，不打无把握之仗。以笨方法的文本驱动系统为主，建立战略支点，放弃速成论，创造全面持久写作局面的决心。</p>
+<p>写作持久战将经过战略防御、战略相持、战略反攻三个阶段，在这三个阶段，要创造性地处理一切战略战术问题。</p>
+<h3>战略防御</h3>
+<p>在此阶段要综合研判局势，不要在正面战场上采取硬打硬拼的单纯进攻与防御战，不要试图幻想仅通过看书上课学会写作，要坚定地通过写作来学习写作，不要试图在一年内学会写作，至少要抱着十年甚至终生的觉悟去练习写作。</p>
+<p>要保存主力，不要制定宏伟的目标与计划，不要在正面战场过多消耗自己的意志，保存有生力量，保持战略耐心，坚持长远考虑，坚持通过不懈的小努力来达成目标。</p>
+<p>要部署好写作的环境，建立自己的写作根据地，养成日常写作的习惯，以增加写作的便利，减少写作的困难，造成有利于持久写作的形势。</p>
+<p>总之，写作的防御战，就是多多写卡片，勤思考，构建属于自己的文本产品系统，以系统驱动，巩固整体实力。</p>
+<h3>战略相持</h3>
+<p>三个阶段中，战略相持阶段是整个战争的过渡阶段，时间将相当长，遇到的困难也将最多，然而它是整个战争转变的枢纽。</p>
+<p>在这个阶段中，必须注重问题导向，着眼现实，解决战场中重点问题、关键问题和复杂问题，作战形式主要的是游击战。</p>
+<p>游击战，即养成卡片写作习惯，随时随地写作，形成写作的零思考行动，持续小写作，增强写作信心，形成写作日常，输出发布写作产品，逐渐建立写作的优势，力求「积小胜为大胜，以空间换时间」，将无数不起眼的胜利积累成大的战略胜利。</p>
+<h3>战略反攻</h3>
+<p>这是持久战中最后阶段，开展战略性的进攻行动，根据文本产品驱动系统：卡片构成文本，文本驱动系统，系统内化行动，行动输出产品。</p>
+<p>主动出击，不再盲目写作，而是有重点、有计划、有步骤地进行写作的全面战争，因为「战争的伟力之最深厚的根源，存在于民众之中」。</p>
+<p>践行「战争是政治的工具，写作是思维的工具，一切写作都是思维的延伸」，将一切涉及思维活动的地方视为战场，将写作与真实生活关联，输出保质保量的文本产品。
+`
+},
+{
+id: 'ch1-5',
+title: '盖上思想钢印',
+section: '定义',
+content: `
+<h2>盖上思想钢印</h2>
+<h3>1</h3>
+<p>你常写作，也常感到迷茫，总怀疑写作总体战与持久战的获胜可能，急想找到解决办法。</p>
+<p>你听说思想钢印可以解决这个问题，便报名来到了信念中心。</p>
+<p>信念中心的大门前立着一座缩小比例精确复制的自由女神像，女神像基上镌刻着一首诗：</p>
+<blockquote>
+<p>把你们绝望的人，你们迷茫的人，把你们渴望看到胜利之光的畏惧徘徊的人都给我，把那些精神失落、灵魂在流浪的人都送来：在这金色的信念旁，我要为他们把灯举起。</p>
+</blockquote>
+<h3>2</h3>
+<p>你来到接待台，说：「我是一名写作者，来获取写作信念。」</p>
+<p>一番手续办完后，你坐到了思想钢印的扫描器下，你的面前有一个小平台，在平台的上有一个红色按钮。有一个声音开始提问：</p>
+<p>「您确信自己要获取对这个命题的信念吗？如果是，请按按钮；如果不是，请离开扫描区。」</p>
+<p>这样的提问重复了三遍，在均得到你确定回答后，按钮发出红光，一个定位装置缓缓地合拢，固定了你的头部，那个声音说：「思想钢印准备启动，请默读命题，然后按动按钮。」</p>
+<p>当按钮被按下时，它发出绿光，半分钟后，绿光熄灭，提示声音说：「思想钢印操作完成。」定位装置分离，你起身离开。</p>
+<p>当你回到门厅时，不经意在门厅角落的镜子发现了现在的自己：眼中的忧郁和迷茫消失，目光宁静如水。</p>
+<p>「你现在感觉怎么样？」接待者微笑着问道。</p>
+<p>「很好，」你说，「应该是这样的。」</p>
+<p>从这一时刻起，至少在你的心中，写作的未来是确定的。</p>
+<h3>3</h3>
+<p>你接受的思想钢印内容是：人类与完美写作的战争必败。</p>
+<p>是的，人类（包括你）永不可能实现完美的写作，世界上100%的写作都是有缺陷的，你的写作永远都会有人批评指责。</p>
+<p>但这又如何？</p>
+<p>我根本无需去实现完美的写作，我承认我只能写出有缺陷的文字，我接受外界对作品的看法，但我依然会继续写作。</p>
+<p>这种写作，是接受「满意比完美重要」、「改善比逃避重要」、「世间事有所逼有所激成者居半」等衍生思想，用阶段性输出成果，用持续改善行动来抵御完美写作。</p>
+<p>这就是完美写作的失败主义，也正是这枚思想钢印的意义所在。</p>
+<p>这枚思想钢印的目的，是批量生产写作的失败主义者。它从不指望你能依靠天赋学会写作，没有试图培养你成为世界级的写作者，而只是期待将许多人培养成默默无闻的平凡写作者甲、写作者乙、写作者丙、写作者丁……</p>
+<p>他们认清人与完美写作之战必然失败的事实，不再期待写作一蹴而就，相信水滴石穿，细水长流的力量，他们深藏在人群之中，无明显特征，日夜执笔写作，他们知道自己在做什么，终点在那里。</p>
+<h3>4</h3>
+<p>自此，你选择成为坚定的可怕的高产的失败主义者，当成功主义屡屡对完美写作发起冲击，却一字不写，不承认失败，直至痛苦死去的时候，你可以承认失败，但仍以笔为刀，选择顽强活着继续战斗，就像那拖回巨大鱼骨的老人。</p>
+<p>在写作的总体战与持久战中，没有胜利的成功者，只有胜利的失败者。</p>
+<p>失败主义者的成功，并不是要实现完美写作，打赢世界上所有作家，而是打赢过去的每一个自己。</p>
+<p>你写作不是在追求完美的写作，你是在追求更丰富的内心，遇见精彩的人生，探索更大的世界。一切的写作，都是你不断向这个宇宙发出我还活着的信号。</p>
+<p>这种写作实际是一种与完美斗争精神的保存与传播，是在这场战争中坚定且竭尽全力创造更多属于你的个人文明，是「给岁月以文明，而不是给文明以岁月」。</p>
+<p>这场战争不仅属于你个人，也属于整个人类，你能做的，就让个人文明创建、保存、分享，让更多人使用，让这场战争变成所有的人的总体战与持久战。</p>
+<p>然后，薪火相传，万世永存。
+`
+},
+{
+id: 'ch1-6',
+title: '何为写作的技术与艺术？',
+section: '定义',
+content: `
+<h2>何为写作的技术与艺术？</h2>
+<p>写作技术的尽头是编程，写作艺术的尽头是文学。</p>
+<p>写作技术的关键词是黑客、逻辑、技能、确定、代码、符号、自动化、工作流等，写作艺术的关键词是诗人、修辞、感性、文采、天赋、诗歌、随机、个性等。</p>
+<p>写作技术可以修炼，写作艺术需要修为。有人从技术走向艺术，譬如杜甫，一字一句，字字珠玑，句句含情，道尽人生苍凉；有人从艺术走向技术，譬如李白，以人之人的独特想象与夸张，造就千古名篇。</p>
+<p>当我们在谈论写作的技术时，我们在谈论技巧、清单、标准、布局、笔法、工具、文档、教程、笔记、产品等，是为研究发现规则，达成某种明确的目的。</p>
+<p>当我们在谈论写作的艺术时，我们在谈论风格、思想、内容、灵魂、有趣、价值、方向等，是为创造世界不曾有过的作品。</p>
+<p>清晰的思想以清晰的文字表现出来，以科学的认知做到分毫不差，像是一幅数码照片，是写作的技术。</p>
+<p>清晰的思想以不清晰的文字表现出来，以人文的视角做到不言而喻，像是一幅国画，是写作的艺术。</p>
+<p>技术与艺术一同在大脑运行，两者的交叉相互合作，便是卡片写作。</p>
+<p>艺术发出信号，这是灵感火花的记录；技术处理信号，这是逻辑思维的加工。最终得出的作品，是艺术与技术相互投射，输送光芒的成果。</p>
+<p>卡片写作，并非需要你掌握层出不穷的技术，也并非需要你追求前无古人的艺术。</p>
+<p>卡片写作，是想要让你掌握普通人学得会的技术，让你相信写作是可习得的技能，然后将写作当做日常生活的一部分，在平凡生活中找到个人写作的基本，不沉默，不恐惧，不迷茫，做自己的英雄。</p>
+<p>很少有人像建筑师造房子一样写作，也很少有人像建筑师那样对生活做充分的准备因为建筑师造房子时，往往事先绘图并仔细思考最微小的细节。</p>
+<p>大多数人的写作，像是玩骨牌，他们的句子像骨牌一样，一个一个连在一起，写下了这一句才会想起下一句。</p>
+<p>大多数人的生活，也往往是想到什么就做，做出来之后再想。虽说生活中的随机事件让任何计划都显得荒唐可笑，<strong>但没有任何准备就介入生活仍旧是一种欠缺考虑的行为。</strong></p>
+<p><strong>要学写作，要学习写作的技术，就要放弃之前随机的写作与人生</strong>，开始像建筑师一样去积累自己的生活与想法，一张张卡片就是一块块砖头，以此构建你的思维宫殿。
+`
+},
+{
+id: 'ch1-7',
+title: '何为卡片创作的哲学？',
+section: '定义',
+content: `
+<h2>何为卡片创作的哲学？</h2>
+<p>编程与文学都是符号的组合，都有其技术、艺术和哲学。</p>
+<p>在搜索引擎中输入「编程 技术」、「编程 艺术」、「编程 哲学」，「文学 技术」、「文学 艺术」、「文学 哲学」，其显示的结果大致相符，受此启发，我也试图补充一下卡片创作的技术、艺术与哲学。</p>
+<h3>卡片创作的技术</h3>
+<p>卡片创作的技术，借助卡片来完成写作，阐述工具的选择策略与具体操作，关注模仿 How 的步骤一二三四。</p>
+<p>新手最关注卡片创作的技术，因为卡片创作将写作从天才的特权变成普通人都可以习得的技能，掌握技术，掌握方法，辅助练习，人人都可写出一手好文章。</p>
+<h3>卡片创作的艺术</h3>
+<p>卡片创作的艺术，像艺术家一样思考，综合全学科知识来进行科学练习，总结出优雅创作的个人最佳实践，拆分解释 Why 的原因一二三三四。</p>
+<p>进阶者开始关注思想的容器，自满手头有一套科学方法论，道士下山四处出击，试图获取更多反馈，什么图表、数字、表格统统用上，补充自我独特的体系理论。</p>
+<h3>卡片创作的哲学</h3>
+<p>道生一，一生二，二生三，三生万物。把握好基本原则，创造文本驱动，六经注我，试图定义 What 的抽象一二三四</p>
+<p>高手抵达人迹罕至之地，「林尽水源，便得一山，山有小口，仿佛若有光」，目睹少有人看见的光景，浮现一种责任，想帮助更多人看见「写作之光」，总结出「不足道」的故事与简单原则几条，如果能让少数几个在黑暗隧道摸索的人继续前行，便已心生满足。
+`
+},
+{
+id: 'ch1-8',
+title: '写作的八种定义',
+section: '定义',
+content: `
+<h2>写作的八种定义</h2>
+<p>如何定义写作？</p>
+<p>它不仅仅是笔在纸上写，手在键盘敲，它更是一种精细的思维活动。以下 8 种定义可供参考：</p>
+<h3>一、解题活动</h3>
+<p>写作是呈现写作者如何以惯例常规程序去解决问题的过程。这个定义参考自司马贺信息加工理论，如果将人视作计算机，写作的行为就可以模式化，例如将写作的主题定义为问题，然后代入这八个程序中：</p>
+<p>1）识别并选择问题；2）分析问题；3）产生可能的解答：4）选择并规划出解答；5）实现解答；6）评估解答；7）决定问题是否已解；8）把最终的解决方案存在记忆之中作为日后使用的知识架构。</p>
+<p>如此的解题步骤一旦形成，写作就成为一种解决问题的程序。解题写作的文本格式一般有手册、指南、论文、技术说明、教程等，偏逻辑与实践，注重工具理性，使用写作来解决问题。</p>
+<h3>二、联想组合</h3>
+<p>联想组合是写作，写作是联想组合，两者的关系就像是知行合一的关系。</p>
+<p>人类记忆以组块形式存在，联想组合即是将组块记忆连接成网络，最容易连接的组块是在空间与时间都相近的组块，但如果远距离的组块都可以连接起来，就可以产生新奇的感觉。</p>
+<p>写作的远距离联想组合在诗歌、悬疑小说最能体现其作用，好的诗歌会创造出特别的意象就是远距离联想的组合体现，例如李商隐的《夜雨寄北》：君问归期未有期，巴山夜雨涨秋池。何当共剪西窗烛，却话巴山夜雨时，就是时间与空间的联想组合转换。</p>
+<h3>三、目标与约束驱动</h3>
+<p>写作可理解为建立目标、设定约束的过程。目标在于构建路径，约束在于分解目标。</p>
+<p>命题作文就是目标与约束驱动的典型写作形式，主题限定，形式不限。好的写作者善于生成自我内在约束，收缩限定范围，以小见大，深入浅出，将主题拉进自己擅长的领域发挥创造力。</p>
+<h3>四、反思迭代</h3>
+<p>写作永远是未完成的知识学习行为，写作者需要在行动中持续反思，重新定义大问题，同时累积卡片，多次解答，形成系统解决大问题的方案。</p>
+<p>我在《我的作品观》中说：喜欢在所有文章底部加个「 ChangeLog 」，修订记录的意思。这是程序员的写代码时的优秀习惯，方便 review 。</p>
+<p>尽量不新创建文章，而是更新文章，同一主题和话题不再写新文章赘述，而是去修订旧文章。细微持续的更新代表你对作品的态度，还是那句话，行动会慢慢改变你的动机。</p>
+<h3>五、寻找表征</h3>
+<p>史蒂芬·平克（Steven Pinker）在《写作风格的意识》中写道：「写作是将网状的思想，通过树状的句法，组织为线状展开的文字。」</p>
+<p>写作是一种创造表征与寻找表征的过程，写作者需要选取可见的外在表征，将你心中的概念、影像、符号和图形等展现。</p>
+<p>就像是王阳明练习书法：吾始学书，对模古帖，止得字形。后举笔不轻落纸，凝思静虑，拟形于心，久之始通其法。</p>
+<p>写作的过程就是内在表征与外在表征不断相互调整，对话、融合的过程。如果写作者可以用一个全新的表征来解决同样的问题，那么这个作品就具有独特的魅力。伟大的作家不外如是。</p>
+<h3>六、认知策略</h3>
+<p>写作是构建认知的策略，于写作者可更好地表达思考，于读者可更好理解文字意义。</p>
+<p>写作的认知策略有四种，这三种策略均有助于你写出好文字。</p>
+<ul>
+<li>第一是原基，即是先构筑中心意念，然后收集卡片，组合成文；</li>
+<li>第二种是模拟，即临摹大师作品，借用大师的设计，一步一路，可能不知其所以然，亦有可能带来新创作灵感；</li>
+<li>第三种是隐喻，这是最常用，也是最强的认知策略，不仅可展现抽象概念，更符合人类的认知规律；</li>
+<li>第四种是变形，即利用时空变形的手法，即一种意象转换成另一种意象，或是将平铺直叙的叙事直线转换成曲线，或将曲线转换成螺旋曲线，创造出耳目一新的文字感觉。</li>
+</ul>
+<h3>七、推理运用</h3>
+<p>写作是一种推理思考，未下笔时模糊未知，一下笔后即清晰有理，文字如同磨墨一般，越磨越黑，写在纸上就越来越清晰，就像是灵光乍现。这个推理运用的过程就是根据事物观察，构筑假设，寻找新信息，挑战既定解释，推测新可能，思考出结果。</p>
+<h3>八、反复认知</h3>
+<p>写作永无终点，所有的终点都是起点，来来回回，反反复复。因为反复，形成韵律，因为韵律，形成风格。写作的反复认知是写作最重要的概念，无数写作者终其一生不外乎是想让世人记住其写作的风格。</p>
+<p>好的写作者会刻意挑选出特别的元素，创建组合，重复使用，搭建秩序，久而久之，写作者驾轻就熟，读者轻易辨认，便形成独有的风格。</p>
+<p>反复认知最典型的文体是诗歌与歌词，典型作者是鲍勃·迪伦。
+`
+},
+{
+id: 'ch1-9',
+title: '我的作品观',
+section: '定义',
+content: `
+<h2>我的作品观</h2>
+<p>长久持续写作，形成这样的作品观：</p>
+<h3>尽量主题创作</h3>
+<p>就写作而言，让每篇文章都尽量有初衷且有目的，有主题，有作品序列感，为自己内心构建的大作品服务。</p>
+<p>大作品是什么呢？司马贺之于认知科学、诺曼之于设计、坎贝尔之于神话、莱考夫之于隐喻。</p>
+<p>不妨尝试在天还没亮的早晨，爬起来，坐在书桌前，闭上眼睛什么也不想，七分钟后，问问自己，自己想写的东西与自己的能力是否匹配？对他人有什么价值？你想写出什么样作品？标杆在哪里？如何缩短这段距离？</p>
+<p>以上不仅仅是创作问题，更是人生问题，估计是挺难的。暂时想不到也没有关系，这些问题不是一朝一夕就可以想明白的。</p>
+<p>但这样也有好处，自从我开始习惯如此思考之后，已经不愁没有写作素材，心中已经埋下一个大大的种子，不再忧愁焦虑每日每周要更新什么文章。想到那，学习到那，写到那。当然，所有的这些东西，都有一条细细的线连接起来，我相信，线的那头就是必定是未来理想中的自己。</p>
+<p>那么，如何主题创作呢？这个问题我只能回答：</p>
+<p>主题创作不是清单，不是框架，不是泛泛而谈，不是道理，不是理论……而是故事、证据；是痕迹、情绪；是行动、作品。</p>
+<h3>持续专注精进</h3>
+<p>知识付费时代，各种课程都在用各种方式掠夺的你的注意力，号称 21 天就让你学会写作，学会绘画，学会摄影……切勿蜻蜓点水，你的注意力才是你最宝贵的财富，适宜沉住气，看潮水流去，做十年后仍然有价值的事情。</p>
+<p>选择一个你喜欢的领域，与多数人走，不要停，慢慢地走，再与少数人走，咬紧牙关，不回头，不掉头，直到人迹罕至的地方，你会发现，你的人生已大不同。</p>
+<p>我写作，就这样写，从刻意写到不得不写，不写不快，顺其自然，水到渠成。</p>
+<p>我不喜欢死磕，何必与自己想做的事情过不去；我不喜欢坚持，做喜欢的事情不需要坚持；我不喜欢斜杠，年月逝去专注更能代表实力。</p>
+<p>期待你在面对纷繁复杂的信息洪流，像先知摩西一样，学会使用排山倒海的招数，闲庭信步般走过去，抵达奶与蜜糖流淌之地。</p>
+<h3>经常迭代作品</h3>
+<p>我现在喜欢在所有文章底部加个「 ChangeLog 」，修订记录的意思。这是程序员的写代码时的优秀习惯，方便 review 。</p>
+<p>迁移到写作，有三重意思：</p>
+<ol>
+<li>代表我此时此地此身的想法，想法可能还不完备，证据可能还不够多，观点可能还不够成熟；</li>
+<li>代表完成比完美好，我愿意将这些想法先分享出来，任何读到这篇文章的人都可以点评指正；</li>
+<li>代表未来我会继续增补完善这篇文章。</li>
+</ol>
+<p>所以，现在我会在构建好大作品序列之后，尽量更新主题代表作，同一主题和话题不再写新文章赘述，而是去修订旧文章。</p>
+<p>细微的持续的更新代表你对作品的态度，以及做人的态度。</p>
+<p>值得一提的是，经常迭代作品也会给你带来惊喜。</p>
+<p><strong>小结：尽量主题创作、持续专注精进、经常迭代作品，这就是我作品观。</strong></p>
+<p>知易行难，愿你做这个时代的安静者与创作者。
+`
+},
+{
+id: 'ch2-1',
+title: '100个不写的理由与1个想写的理由',
+section: '驱动',
+content: `
+<h2>100个不写的理由与1个想写的理由</h2>
+<p>列出所有你知道的可能阻止你完成任务的事情</p>
+<p>每天不想写的理由至少有一万个，</p>
+<ol>
+<li>家里出点事，不写了。</li>
+<li>自己生了病，不写了。</li>
+<li>吵架了，不写了。</li>
+<li>不开心，不写了。</li>
+<li>太开心，不写了。</li>
+<li>旅游去了，不写了。</li>
+<li>没旅游，不写了。</li>
+<li>开了一天车，不写了。</li>
+<li>坐车，不写</li>
+<li>坐地铁，不写</li>
+<li>坐书桌旁，不写。</li>
+<li>跑马拉松，不写。</li>
+<li>没马拉松可跑，不写。</li>
+<li>换工作，不写了。</li>
+<li>工作一成不变，不写了。</li>
+<li>我们太老了，不写了。</li>
+<li>太年轻了，不写了。</li>
+<li>文字不值钱，不写了。</li>
+<li>我们太矜贵，不写了。</li>
+<li>我们不值得，不写了。</li>
+</ol>
+<p><strong>相信我以上理由都是假的。</strong>
+`
+},
+{
+id: 'ch2-2',
+title: '写作内在驱动',
+section: '驱动',
+content: `
+<h2>写作内在驱动</h2>
+<p>所有开写作课程的人都建议读一读的论文，这篇博士论文足足有 261 页，如果打印出来足足是一本小书，同时论文足够优秀，可以看两三天了。</p>
+<p>从来写作学都不能作为一门科学，因为写作不是硬科学，它不像物理，它没有原理，没有定理，不能传承，别人总结的经验不见得就在别人身上就能用。</p>
+<p>你可以轻易在市面看到的写作课程都有以下的问题：伪科学总结、个人经验发布、模糊笼统建议、未经实践方法、简单粗暴做法……大多叫你多读、多写、多体会，而不敢将写作的教学量化、具体化、科学化。同时，大多数的写作课程都是外部导向，小时候是应试主义，写作是为了求高分，现在是功利主义，写作是为了变现，10W+。</p>
+<p>但你所看见的好文本大多都不是外部导向的，例如《史记》，例如《项脊轩志》，好文本更多是人之所以为人的标志，是人文主义的呼唤，是表达欲望的倾泻，是诚意正心的结果。</p>
+<p>那该如何改变？传统写作教学大多从教学主体出发，认为老师是主体，但实际上，写作教学并不只是老师的问题，而是老师、课程、学生的问题。老师的问题是只教学生向外求的技巧，课程的问题是笼统粗暴僵化的经验，学生的问题是只懂得找套路的方法。在我看来，这三个问题其实都是一个问题：如何诚意真心地写作？——老师需发现写作的诚意真心，课程需凝聚写作的诚意真心，学生需表露出写作的诚意真心。</p>
+<blockquote>
+<p>"导弹之父冯·布劳恩有句名言："基础研究就是：在我做的时候，我不知道我在做什么。"他的意思是，很多研究纯粹是兴趣和解决问题的冲动驱使的，一开始研究者本身也不知道是有什么用、或能派上什么用场。没必要一定为读书设定一个最终目的，难道读书本身给人带来的乐趣还不够吗？"</p>
+</blockquote>
+<p>如果你的写作与你最为珍视的，能够给予自己意义感与使命感的东西保持一致，内在驱动就会发挥作用。如果你正在写作的内容对你真的很重要，你就会感到精力充沛，注意力集中，毅力也更强。</p>
+<p>不要试图找真我，真我是不存在的，你永远找不到，越是找不到，你越是焦虑，就行动瘫痪，找各种成功导师，你要找可能的自我，用内在驱动做你想做的事。</p>
+<blockquote>
+<p>别人自有价值观和与之相配的活法，我也有自己的价值观和与之相配的活法。这样的差异产生了细微的分歧，数个分歧组合起来，就可能发展成大的误会，让人受到无缘无故的非难。遭到误解、受到非难，绝非令人愉快的事件，还可能使心灵受到深刻的创伤。这也是痛苦的体验。</p>
+<p>然而随着年龄的增长，我们逐渐认识到，这样的苦痛和创伤对于人生而言，其实很是必要。想起来，正是跟别人多少有所不同，人才得以确立自我，一直作为独立的存在。就我而言，便是能够坚持写小说。能在同一道风景中看到不同于他人的景致、感到不同于他人的东西、选择不同于他人的语句，才能不断写出属于自己的故事来。甚至产生了一种罕见的状况：为数绝不算少的人把它拿在手中阅读。我就是我，不是别人，这于我乃是一份重要的资产。心灵所受的伤，便是人为这种自立性而不得不支付给世界的代价。</p>
+<p>——[日]村上春树《当我谈跑步时我谈些什么》</p>
+</blockquote>
+<p>写作说到底就是一种欲望，一种欲望的实现，强烈的想写才是最根本。</p>
+<blockquote>
+<p>人类是运用技能来解决问题的社会动物。在满足存活的要求后，他就追求两类重大的体验。第一类深刻的需求，是运用其技能去响应挑战，这可以是击出一记好球，或是漂亮地完成一项任务；第二类最深刻的需求，则是寻求和一些同类建立有意义的和谐关系：爱与被爱、尊重与受尊重、分享经验、为共同目的而工作。----赫伯特·西蒙</p>
+</blockquote>
+<blockquote>
+<p>黑泽明：我的电影完全源自我想在特定的时间当中去讲述一件特定事情的渴望。对我来说，任何电影项目，从根本上讲起都是源于表达某种东西的内在需要。剧本培育了这个根，使它成长为一棵大树，而使树可以开花结果的便是导演。</p>
+</blockquote>
+<blockquote>
+<p>不要努力成为一个成功的人，而要努力成为一个有价值的人。——阿尔伯特·爱因斯坦</p>
+</blockquote>
+<p>写是写的回报，回报不是外在的奖励，而是凭借艰苦努力得到的收获，最好的好报来自内在激励的体验。
+`
+},
+{
+id: 'ch2-3',
+title: '相信书写的力量',
+section: '驱动',
+content: `
+<h2>相信书写的力量</h2>
+<p>书写的力量，单单自己相信是不够的，看着别人去做也是不够的，还要自己一个字一个字地敲出来，把事实与常识告诉更多人。</p>
+<p>如此的写作，便是不沉默，便是日常生活的抗争。</p>
+<p>可以发挥一点点的力量，便去发挥，能让一部分人的价值观产生哪怕一点点的偏移，那就已经足够了。
+`
+},
+{
+id: 'ch3-1',
+title: '新手如何练习写作',
+section: '实践',
+content: `
+<h2>新手如何练习写作</h2>
+<p>总有新手问我如何练习写作，我举两个例子：</p>
+<p>A 问：「如何练习写作？」</p>
+<p>我：「你先去写，练习写满 7 天。」</p>
+<p>A 问：「就是不知道如何写，有什么写作指南吗？」</p>
+<p>于是我将《指南》发给他，A 后来就没有下文了。</p>
+<p>B 问：「如何练习写作？」</p>
+<p>我：「你先去写，练习写满 7 天。」</p>
+<p>B 说：「好的。」</p>
+<p>七天后，B 回来交文章。</p>
+<p>我问：「现在你已经知道如何写了，如果七天前的你问现在的你如何写作，你将如何回答？以此为主题写一篇文章。」</p>
+<p>又过一天，B 上交作业，我将指南发给 B ，说，「这是我写给过去的我的写作指南，可能对你有用。」</p>
+<p>对待学习有两种态度，分别对应 A 和 B。</p>
+<p>A 视学习为求知，向师父学习之前得看看方法对不对，然后再挑着做，儒家叫「任其私智」，有点自己的小聪明，不会舍己从人。知道了一点，就以为自己全部知道了，知道了一点，就以为自己全部会做了。结果是「听过了许多道理，依然过不好这一生」。</p>
+<p>B 视学习为实践，师父叫做什么就做什么，用笨方法，少用脑，少评判，只管老老实实地做。剑道叫「守破离」，守就是放下自我，严格遵守师父的指导。在这个阶段，你只需一心一意做好基础功夫，没有时间也无须问「为什么做」和「如何更好地做」。师父叫做什么，你就做什么，完整复刻师父的动作。然后你才能破，开始与师父对话，了解行动背后的原理，在基础功夫的自信上融入想法，寻求师父个性化指导，形成风格。最后，你才能离，道士下山，走自己的路。</p>
+<p>学习本不是求知，若此，往往知而不行；学习本是实践，如此，才能知行合一。</p>
+<p>没有什么技能是不能通过练习获得的，在练习写作过程中。你可能会陆续收到各种写作高手给你的建议，你可以在印象笔记建立一个「写作建议」的笔记本，将所有你听到看到的写作建议都放到那里收藏着，然后继续练习，一边练习，一边写练习感想，直到完成书中所有练习，你再回头看那些别人的「写作建议」，你会发现，那只不过你练习感想的另一种重复。</p>
+<p><strong>笨方法学写作，无非就是想告诉你，别人告诉你的都不算自己的，自己做过的才算是自己的。</strong></p>
+<p>阅读过大量教人写作的书，它们都写得不错，可是都没有说到真正的难题。</p>
+<p>写作的真正难题不是没有宏伟的写作计划，也不是缺乏精湛的写作技巧，更不是没有良好的写作环境，更不是没有名师的指导。</p>
+<p><strong>写作的真正难题在于让写作初学者写起来。</strong></p>
+<p>太多太多的写作初学者总以为写作是自我呈现，总以为自己要一鸣惊人，总害怕暴露出不完美的自己，害怕引来他人的嘲笑，从而缺乏写作自信。</p>
+<p>太多太多的写作初学者总想到等到有灵感才写，以为先有灵感才能写作，结果造成灵感依赖，写不出就借口没有灵感，事实上，灵感与写作没有顺序，反而大多灵感会在写作中催生。</p>
+<p>太多太多的写作初学者总想着我学完全部课程，收集完全部写作技巧再开始动手写，总以为我看完了就学会了，这里方法实在是太笨了，别人的更加高明的技巧可能更适合我。</p>
+<p>那些笨方法的写作者都在不停地写作，在写作中学会写作。</p>
+<p>1）持久的写作需要内驱与热情驱动，不计回报地付出，那种深夜奋斗、情绪激荡的满足感与记忆千金不换；</p>
+<p>2）辛辛苦苦写出来的东西，即使只能获取少数人认同，那便足够。所以，找到那些少数人，很重要，那是引导你在长夜中前行的明灯；</p>
+<p>3）自己该写什么不该写什么，不应该由别人来决定，如果你决心去做，踏踏实实，认认真真，那些认同你的少数人一定会帮你；</p>
+<p>4）坚持自己认为是对的东西，一时遇到打击不重要，眺望远方，流云变幻，青山不改。</p>
+<p>5）你以为你知道真实，其实你知道从来只是结局，少在社交媒体打口水战、起哄、看热闹，多想想为什么？用写作来展现你的独立思考更重要。
+`
+},
+{
+id: 'ch3-2',
+title: '十年学会写作',
+section: '实践',
+content: `
+<h2>十年学会写作</h2>
+<p>又读了一遍《十年学会编程》（Teach Yourself Programming in Ten Years），好文当如此，十几年前写的文章如今仍有强劲的生命力，而且将文章的「编程」替换成「写作」，道理依然成立。以下是我参考该文章改写的句子：</p>
+<p>如果一门课程不能影响你对写作的想法，那它就不值得去学。</p>
+<p>任何领域的卓越成就都只能通过一生的努力来获得，稍低一点都不行。</p>
+<p>学习写作，始终是兴趣与好奇第一，因为其他因素，例如金钱、名次、奖励、名声等，它们都不足以支持你投入十年的时间去学习写作。</p>
+<p>学习写作的最好方式是练习，不是读书、不是听课、不是做笔记。</p>
+<p>如果你觉得自己写作需要提高，你就要知道写作高手在哪里，他们在做什么，想办法缩短你们之间的物理距离和心智距离，学习他们的思维模式与行动模式，最终成为他们。</p>
+<p>有人问：「什么样的写作课才值得学？」</p>
+<p>我说：「如果一门课程不能影响你对写作的想法，那它就不值得去学。」</p>
+<p>他问：「相比其他写作课，《笨方法学写作》有何最大不同？」</p>
+<p>我说：「多数写作课号称能让你21天学会，短期快速变现，而《笨方法学写作》提出且践行十年学会写作，写作短期内是学不会的，只能通过大时间周期持续练习掌握，写作是身心之学，重在洗心养气。</p>
+<h3>为何是「十年」？</h3>
+<p>我是一个普通人。</p>
+<p>我知道，任何领域的卓越成就都只能通过一生的努力来获得，稍低一点都不行。</p>
+<p>我知道，在那道光没有射在我头上之前，我就必须去坐冷板凳，默默努力，潜心创作。</p>
+<p>司马贺说：「在这些专业领域，差不多没有任何一个人不是首先经过了至少十年光景的紧张学习和勤奋实践，才有可能达到世界水平的成就。」</p>
+<p>我没有太大的欲望达到世界水平的成就，我只是希望能把想做的事情做成，仅此而已。</p>
+<p>一年前，我立志读完《治治通鉴》，不知道何时可以读完，既然决心已定，便定下了十年的期限。</p>
+<p>星河明灭，日月轮转。十年这个期限，说短不短，说长不长——当你去诚心正意地想去做一件事情时，时间用多点，战线拉长一点也没有关系，当你觉得所有的事情都可以用笨方法完成时，每天的时间便觉不够用了。</p>
+<p>十年，是普通人成就的「最合理必要时间」。</p>
+<p>读书如此，写作如此。</p>
+<h3>怎么定义「学会」？</h3>
+<p>写作到底能不能「学会」？</p>
+<p>能学会——但并不是读书、听课、做笔记的那种「学」，而是刻意练习那种「学」。</p>
+<p>那这种练习是否量化呢？</p>
+<p>普通新手掌握卡片写作技能，路径只有一条：大量写卡片。</p>
+<p>你所看到众多卡片写作高手的精美构思和想法，都是卡片锻炼思维、肌肉记忆、大量书写、大量舍弃而成的。</p>
+<p>根据我践行卡片创作与开设课程的经验反馈，10000卡片是掌握卡片写作的「最基本数量」。</p>
+<p>在学习卡片写作的路上，我见过太多的失败案例，100%的失败原因都是没有持续大量练习。</p>
+<p>写作没有「最佳路径」，你永远都不会有「学会」写作的那一瞬间。</p>
+<p>你只能找到一条「满意路径」，给自己设定十年的期限，沉下心，写下第一个「10000 张卡片」，第二个「10000 张卡片」，第三个「10000 张卡片」……</p>
+<h3>「写作」到底是什么？</h3>
+<p>什么样的写作才能持续十年？</p>
+<blockquote>
+<p>人类创造出的产品里，只有那些为了满足自己而作的，才是真正值得读、值得看、值得听的。满足全世界这个目标太大，你很难射中靶心。——Tim Bray</p>
+</blockquote>
+<p>写作，是人的创造性适应过程，是主动的，符合内心抉择的行动，它的真正意义并不在外在功利，而在于从内部改造自己的生活方式，是「身心之学」、是自我修养、是为了让自己变得更好、是责任、是使命、是不沉默、是日常生活的抗争……
+`
+},
+{
+id: 'ch3-3',
+title: '用功不求太猛，但求有恒',
+section: '实践',
+content: `
+<h2>用功不求太猛，但求有恒</h2>
+<p>如何评价曾国藩？</p>
+<p>知乎有个 1.7 K 的答案说「曾国藩是庸人的楷模，中年人的抚慰」，为什么？只因大部分人人到中年才会发现自己一事无成，才会发现自己资质平平，原来是庸人，但又不甘心，到惊喜发现曾国藩原来比自己更「死蠢」（大多数人知道的曾国藩是那个背书背不过小偷的曾国藩），但竟然也作出一番成绩，便以曾国藩为楷模。</p>
+<p>于是，他们开始学习曾国藩，取法乎上，仅得乎中，极力学习曾国藩的「死蠢」，所以宁过犹不及，不愿中途而废，但往往学习一段日子，便发现别人所说的「普通人」曾国藩，原来并不普通，世人赞曾国藩多在「恒」。</p>
+<p>大多数人学习曾国藩为什么会失败？原因多在于用力过猛，无法有恒，错在常立志，而非立长志。</p>
+<p>所以，曾国藩说：<strong>「用功不求太猛，但求有恒。」</strong></p>
+<p>我是差不多中年时候才愿意承认自己用笨方法去做事才会稍微有成绩，接受自己一旦做投机取巧的事情便会失败的事实，做什么事情多会想想这个事情能不能持续做，如果某个事情只能捞一笔就走，便自以为无法精明算计，往往拒绝了事。</p>
+<p>一旦决定做某个事情，也不会事先张扬先做什么大仪式，先开始做，做点小行动，如能行得通，再发现能持续去做的方法，继而养成习惯，静待岁月的馈赠。</p>
+<p>我教人写作，不会教人走捷径的方法，而是教人持续去学写作的方法。我在《笨方法学写作》中常说，学写作，不能兴起了就写，而要旷日持久地去写，也不能功利心起了就发奋，要有平常心，为学习探索增长技能去写。</p>
+<p>我教人写作，不会教人写出好文的技巧，而先教人养成写作的习惯。按照曾国藩的「用功不求太猛，但求有恒」的理念，开发出「最小写作习惯」的小课，小课的连载形式不会用力过猛地一口气推出，而是「有恒」地持续更新（现在已经更新完毕）。课程不求学员每天写 1000 字、500 字，只求每天写 50 字，每天持续地写下去，最小写作习惯没有终点，并非养成习惯就终止，习惯之所以称为习惯，就是要持续一辈子。</p>
+<p>世人常以为曾国藩有地摊书般的厚黑精明智慧，但做好「恒」字，便获曾国藩九成功夫。</p>
+<p>一步一步走罢。
+`
+},
+{
+id: 'ch3-4',
+title: '「创作」的真相',
+section: '实践',
+content: `
+<h2>「创作」的真相</h2>
+<p>大多人迷恋创作，都是迷恋「创」，而是不是「作」，「创」代表的是想象力、幻想力、创造力，想象创作是一瞬间的功夫，然而，这只是创作的迷人幻象，把构想变成实际的作品，是一条漫长的道路。「创」是短平快的想法计划，而「作」是长高慢的执行积累，事实上。</p>
+<p>你想象中「创作」是王勃「落霞与孤鹜齐飞，秋水共长天一色」的一气呵成，但实际中的「创作」就是卢延让「吟安一个字，捻断数茎须」的苦苦斟酌。</p>
+<p>创作创作，只有 10% 属于「创」，剩下 90% 就是「作」。爱迪生说得更绝：「天才是 1% 的灵感加上 99% 的汗水。」贝多芬不可能一想到交响曲主题就能自动写出曲谱，他还必须将音符一个接一个地写出来，纳博科夫也不能一想到个好故事就能直接全篇写出来，他还必须一张卡片接一张卡片写出来。</p>
+<p>创作的难度在于，创作中的「创」源头是澎湃的思想流动，但它的「作」成果却需要冷静的行动呈现。</p>
+<p>创作就像是一杯水，各种想法、灵感瞬间冲入，这些卡片像絮状物体一样在水中飘荡，水体马上变得混沌，在这种情况下，你并不能看清任何东西，所以，你需要使自己安静下来，让所有想法和灵感都沉淀下来，过滤成为作品。</p>
+<p>如何才能让自己安静下来？</p>
+<p>最基本的方式就是学习冥想。每个人应当找到自己的让心静下来的方式，寻找自己最舒服的安静方法。</p>
+<p>我在写作前，总是设法让自己安静下来。我会花 7 分钟冥想，在冥想期间，什么都不想，却能感觉到一种浊水变清澈的流畅，此时想法与灵感随时冲入，清晰无比，所以能轻易抓捕。</p>
+<p>除了冥想，写卡片也能让你逐渐训练能随时安静的能力，这样即使在公交车、火车、餐馆这样嘈杂的环境中，你也能在一瞬间让自己烦躁的心安静下来，专注在一张小小的卡片中，让想法和灵感得以记录。
+`
+},
+{
+id: 'ch3-5',
+title: '想好才能写好',
+section: '实践',
+content: `
+<h2>想好才能写好</h2>
+<p>经常有人在公众号留言，这篇文章写得真好，怎么才能提高写作能力？</p>
+<p>你经常看到提升写作能力的建议集中在标题、修辞、风格、结构、选题等技法层面，但实际上文章写得好，是作者是阅读得好、思考得好，编排得好，表达得好的综合结果。</p>
+<p>你可以想象，大脑是一台人工智能机器，在收到你的写作需求之后，将库存的主题卡片，抽取、连接、整理、编排，等到写作的卡车到来之后，大脑便将卡片按顺序一张张地封装在集装箱中，摆放陈列在货架前（发送在公众号或博客），呈现在读者的眼前。</p>
+<p>所以，别试图单独去提高写作能力，那是缘木求鱼，升山采珠，而是采用大问题驱动的方法，即写作是解决某个问题，解决某种挑战的自然欲望释放。</p>
+<p>这样，当你的知识或者能力抵达某种程度，你觉得只有你把解决方案写下分享出来，会帮助到更多人，便有了写作的使命与责任，便会驱动你拿起笔来。</p>
+<p>如此，你便会自觉地站在读者的角度，思考怎么将好思想传递给出去，读者才能够容易地吸收和理解。</p>
+<p>好的写作能力，便是这么一回事。
+`
+},
+{
+id: 'ch3-6',
+title: '高手快速写作的秘密是什么？',
+section: '实践',
+content: `
+<h2>高手快速写作的秘密是什么？</h2>
+<p>很多人的写作过程都是漫长的，但是有极少一部分写作高手却可以快速写作。这些人可以在 5 分钟内构思并完成大纲，然后再用惊人的速度补充证据资料完成一篇观点清晰、逻辑通畅、有理有据的文章，如果再给他们一些时间，他们还能将这篇文章修改得更好。</p>
+<p>但是，这种人确实只是一小部分。绝大多数人还是在没完没了地耗费着时间，而且就算他们时间紧迫，心情着急，都不会像自己想的那样，即使花了两倍的时间也不能将内容质量提升两倍。</p>
+<p>人与人之间为什么会有这么大的差距呢？</p>
+<p>很重要的一点是训练不足。</p>
+<p>怎样做才能高效思考？怎样系统收集信息？怎样迅速归纳思考？怎么深入分析整理信息？怎样将自己脑中信息有序表达出来？无论是学校还是社会都没有提供训练。</p>
+<p>即使大部分人小时候学过语文，也报名学过很多写作课程，阅读过很多写作的书籍，知道了很多写作的技巧，但他们往往学完就算，没有持之以恒地练习，有关写作的基本功得不到训练。</p>
+<p>为什么他们能快速写作？</p>
+<p>这是因为快速写作是他们平时训练的结果，而不是过程，对他们而言，写作是表达观点的方式，是解决问题的提案，他们平时就不断在思考这些问题，而且从不倦怠地收集着必要的信息，使自己保持灵敏，他们的信息情报「接收器」始终处于强信号的接收状态。</p>
+<p>此外，他们还会与写作相关领域（例如科技、演讲、写作、编程等）的专家建立关系网，并拥有几个可以信赖的商量对象。他们经常在做最好的打算和最坏的打算。对于他们来说，眼前的问题会带来怎样的后果、今后的动向等问题全都十分熟悉。</p>
+<p>换句话说就是，快速写作并不是他们写作能力的专业体现，而是他们本身已经培养出对任何问题快速反应的能力，他们能快速针对问题提出设想、验证设想、解决问题……而写作，只不过是将他们的思考结果呈现出来而已。
+`
+},
+{
+id: 'ch4-1',
+title: '什么是写作风格？',
+section: '风格',
+content: `
+<h2>什么是写作风格？</h2>
+<blockquote>
+<p>清晰的文字能带来清晰的思路。表达它的时候你才知道你对它了解些什么。好的写作风格也从一定程度上反映出人的性格。让读者省事，而不是给自己省事。</p>
+<p>——Michael A. Covington, 佐治亚州立大学计算机科学教授（摘自 How to Write More Clearly, Think More Clearly, and Learn Complex Material More Easily）</p>
+</blockquote>
+<p>每个写作者都想形成自己的风格，而风格是一种结果，而不是一种能力。</p>
+<p>写作者并不是先形了风格之后再有好作品，而是写出一系列好作品之后才形成的风格。</p>
+<p>好作品摆上货架，读者一看这一系列作品具备某种共性，且体现出写作者的真实情感，喜怒哀乐，七情六欲……这种能呈现人之为人，且能与其他人区别开来的写作特点，被称为风格。</p>
+<p>换而言之，风格并非主观营造，而是忠实自我的性格、价值观、行为的呈现总结，体现在文字，读者便能发现写作者的偏好——反复采用的措辞、经常涉及的创作主题、不假思索的手法、似曾相识的隐喻等等。</p>
+<p>E.B.怀特说：年轻的作家常常认为，风格只是文章内容的修饰物是让一道乏味的鱼变得可口的调味品。风格不是这样一个单独的实体，它不可拆分，难以筛选。</p>
+<p>写作风格不可复制，因为它是个人生活经历、阅读、思考、写作、价值观、行动等因素的总和，但它可以学习，可以模仿。</p>
+<p>所有写作风格的形成有规律可循，好的写作者形成风格，并非刻意与众不同营造风格，是因为他想成为更好的人，想更好地传播自己的思想，想帮助更多人形成自己的思想。</p>
+<p>写作风格也值得去追求，因为写作中最持久的是风格，风格是写作者一生中最有价值的投资，对其独特追求的努力总不会白费。
+`
+},
+{
+id: 'ch4-2',
+title: '如何练习古典写作风格？',
+section: '风格',
+content: `
+<h2>如何练习古典写作风格？</h2>
+<p>好的写作风格满足这三要素：</p>
+<p>1）传递准确的信息。好的写作风格必定包含术语之正确使用，尤其是公众场合，对专业用词，写作风格必须作出严格限定，务求用准确的字词表达出清晰的意思。</p>
+<p>2）赢取读者信任。一致的言辞必定代表一致的行为，读者长年累月阅读具有一致性的文字，自然信任作者。文如其人背后的信任不是点赞之交，而是落在文字深处的心意统一。</p>
+<p>3）风格让世界更美。写作之风格不是强制，但世界总有人愿意为之努力。为让句子读起来更畅顺、句式更优雅整齐、意思更容易理解、意味更让人莞尔接受……他们愿意正坐在桌子前，一个字一个字地从头脑中抓取出来。</p>
+<h3>古典风格是什么？</h3>
+<p>古典风格是一种以人为本的文字呈现方式，鼓励朴实、简洁、清晰、真挚。朴实的语言要做到生动活泼、通俗明快；简洁的句子要做到简明扼要，不应有冗词，不应有赘句；清晰的词语要多用名词和动词，少用形容词和副词；真挚的文章要流畅自然，而非刻意显露自己。</p>
+<p>如果所有写作者都必须学习一种写作风格，那就是古典风格。</p>
+<h4>古典风格喜欢平等</h4>
+<p>古典风格提倡读者与作者处于平等地位，提倡正视读者，提倡花值得花的时间去钻研，使用具象与浅白的语言，让读者读完文章觉得自己是天才，而不是傻瓜；要极力避免到掉入到写作中的叨叨絮絮中去，叙述与主题无关的背景，例如强调自己的论述过程如何艰深与复杂。古典风格信任读者有足够的智力，能体察很多不易界定，有争议的概念。读者正是要看作者如何解决这些问题。</p>
+<p>作家的任务是出现在作品中，以一种个人的方式与读者交流，而非将自己作为作品的唯一主体。作家会去发现、质疑、品味、探索、观察、交流、好奇，最重要的是思考。就这样，事情发生了，他来到现场，将事情两两放在一起，拼凑出一幅与事件或证据相关的画面，展现在读者面前如果幸运的话，作家可以借助自己所经历的各种具体细节，向读者揭示一个新的画面、新的世界。所以，非虚构文学作家就像一台传输机、一个媒介、一块透视镜片</p>
+<h4>古典风格喜欢简单</h4>
+<p>古典风格作者可以用浅白语言解释一个深奥的概念，而不会是像是对读者摆出恩赐的姿态。关键在于假设你的读者跟你一样聪明、一样成熟，只是他们并不懂你所掌握的知识罢了</p>
+<p>一旦遇上抽象概念，古典风格写作建议通过故事、人物、情节、行动等把概念具象表现出来。</p>
+<p>德国哲学家叔本华在其谈写作与风格的文章中，以更有力的笔触点出了这个真理：「从古至今，词不达意和含糊其辞都是非常糟糕的问题，百分之九十九是因为作者脑中一片混沌造成的……如果思路够清晰，表达就会很准确，很快就能进入佳境，因为只要思路清晰，就很容易做出恰当的表达。善于思考的人总能以浅显易懂的文字来表达自己的思想。而那些遣词造句晦涩难懂的作家，大多都没想明白自己究竟要表达什么——他们对此只是略知一二，根本没有成熟的想法。」所以在你动笔之前，得先有清晰的思路，做到心中有数。</p>
+<p>松浦弥太郎说：为了很多的「受众」，也是为了「受众」中的我。我写文章时，只用简单的语言。从事媒体工作时，为了能让忙碌的人也能轻松阅读，虽然想多写，但我也会写短一些，因为不想让迷惑和脆弱的人感受到压力。我希望那些尽管不太明白意思的孩子在读到文章后，心中也留下点什么。向那些像老奶奶那样住在很远的地方的人，也能传递还没有人说过的内容。我相信这是最高级的实现自己价值的方法。</p>
+<h4>古典风格喜欢真实</h4>
+<p>提倡下笔前就掌握真相，发现并呈现事实和最完美的视点，提倡将语言和真相连在一起，提倡让读者觉得你的思想在下笔前就已经成型了，而不是靠写作来整理思想；提倡不加评判；提供与读者对话，提倡引导读者的观看真实的世界，提倡书写自己真实内心。</p>
+<h3>如何练习古典风格写作？</h3>
+<h4>1、与读者对话</h4>
+<p>一个作者可以用上多少抽象概念，视乎读者的能力，但是要推测一个典型读者所掌握的知识组块，需要天赋和异常的洞察力，这是普通人鲜有的。</p>
+<p>每个作者都要针对读者对话题的熟悉程度作出最佳评估，然后调整语言的专业程度，聪明的做法是假定他们认知程度低。</p>
+<p>谨记古典风格的指导性隐喻：作者是跟读者对话，把读者的视线引向世间的事物。</p>
+<h4>2、文以载道</h4>
+<p>写作，若想快速获得他人认同，若要放到功利的位置，每日逼迫练习各自浮于表面的技巧，心如羽毛，漂浮在世俗的评价之中，不能沉入深水一窥写作之厚实沉稳精要，终只能茫乎其若迷，惑惑而不得其解。</p>
+<p>每个想练习古典写作风格的人都应该仔细读读韩愈的《答李翊书》，韩愈写作建议精要都汇集在这篇短短的文章里面了。</p>
+<p>韩愈在其中对于文字的势利与力量的论述尤其精彩。韩愈说，如果你写作是希望能够达到「立言」的境界，千万不要期待速成，也不要势利诱导，要像树木一样，滋养根茎，才能长成果实，要像油灯一样，加够灯油，才能火光充足。树根茂盛，果实就能如期成熟，灯油充足，灯光就足够明亮。仁义之人，他的文辞必然和气温厚。</p>
+<p>写出好文，就是写出十年百年千年之后仍可以读的文章，就是像韩愈的《答李翊书》的文章，即使年岁逝去，仍然有参考价值，这便是「立言」。</p>
+<p>古典风格适合那些愿意付出努力并寻求它的人，所以，它不适合所有人，它是一种理想，它可以让所有人成为更好的作者，它是治疗学术、官僚、企业、法律和科技等文章病害的良药。
+`
+},
+{
+id: 'ch4-3',
+title: '如何练习简洁风格？',
+section: '风格',
+content: `
+<h2>如何练习简洁风格？</h2>
+<p>好的写作者会刻意练习简洁的文字风格，文字简练，短小精悍，清爽痛快。</p>
+<p>如何做到简洁？</p>
+<p>今人阅读多来公众号，公众号编辑爱追热点，重时政评论情感，轻文笔素养风格训练，多不做到简练。</p>
+<p>提倡 10 W+ 社会不会教你体会微言大义的妙处；动则喜欢深度长文的媒体不会告诉你简洁的好处；喜欢用表情包来撑篇幅的新媒体不会教你删减无关字句的训诫。</p>
+<p>要学简练，必须从古文中体会，然后在白话文中实践。古有欧阳修、韩愈、柳宗元等，今有王云五、王小波、余光中、钱钟书、王文兴、查良铮、王道乾等。</p>
+<p>西文写作有古典风格，《风格要素》总结成四个字：朴实、简洁、清晰、真挚。《风格感觉》解释成为呈现、是告知、是图景，建议写作者用引导者的身份来面对读者，想象读者就在你面前，用最容易懂的话来让读者清楚明白。</p>
+<p>中文写作有古文运动，韩愈谓之「陈言务去，文以载道」，抛弃排比、对偶、用典以及格律，缺乏实用价值的问题，主张模仿三代两汉的古文，学习它的质朴载道、干净脆落、简练精悍、清爽痛快。</p>
+<p>王云五曾用古文自修中文写作——</p>
+<blockquote>
+<p>「后来我自修中文，除了认为必须熟读背诵者外，对于某些用不着背诵的，我间亦把它译为英文，放置若干日，再从英文重译为中文，然后仿照英文作文的方法，持与原文比对修正。又那时候白话文还未盛行，但我偶然也仿中英对译的原则，把若干篇古文译为接近白话的浅近文言，过了些时再重译为古文辞，以资比较。」</p>
+</blockquote>
+<p>王小波在《我的师承》说——</p>
+<blockquote>
+<p>王小波：「最重要的是：在中国，已经有了一种纯正完美的现代文学语言，剩下的事只是学习，这已经是很容易的事了。我们不需要用难听的方言，也不必用艰涩、缺少表现力的文言来写作。作家们为什么现在还爱用劣等的文字来写作，非我所能知道。但若因此忽略前辈翻译家对文学的贡献，又何止是不公道。」</p>
+</blockquote>
+<p>我就曾尝试过阅读《资治通鉴》来练习简洁。</p>
+<p>司马光不喜欢辞藻艳丽、华而不实的文体，而喜欢笔致朴素、言之有物的古文体，他的文字「文辞纯浑，有西汉风」。</p>
+<p>经过一段时间的练习，段落越来越多，句子越来越短，试图用最少的字句将复杂的事情说清楚。
+`
+},
+{
+id: 'ch4-4',
+title: '如何让文字更形象？',
+section: '风格',
+content: `
+<h2>如何让文字更形象？</h2>
+<p>修辞，可以理解成为精心修剪过的辞语，通过其风格和比喻的创新，通过其带来的审美惊喜，通过其为我们带来的持久的愉悦。</p>
+<p>你越是精确地用语言来表达我们对世界的看法，你就越能思考得越好。润色你的作品就像擦拭你思考经历的镜头。当然，更好的写作会产生更清晰的想法。</p>
+<p>描述大自然的时候，你可以选择小细节并且把它们归类组合，让人读了之后，能闭目勾勒出整个画面。</p>
+<p>修辞可以将人的想象力释放出来，无拘无束地去寻找栩栩如生的画面。修辞使得我们能够跨越界限，传递出审美上的惊奇与幽默，屡屡给人以小小的震撼，并通过这样的方法，找到微妙而新颖的视角。修辞使得语言及其所表现的思想能够得到无限扩展。</p>
+<p>如何使用隐喻？博尔赫斯这样说：</p>
+<blockquote>
+<p>我年轻的时候总是尽力寻求新奇的隐喻，然后发现真正好的隐喻总是同样的。我是说，你把时间比喻成漫漫长路，把死亡比喻为沉睡，把生活说成是做梦；这都是文学中一些伟大的隐喻，因为对应着人世间的根本问题和基本要素。如果你编造出新的隐喻，可能有那么短暂的一瞬，它们会显得新颖奇特，但不会激发任何深层情绪。</p>
+</blockquote>
+`
+},
+{
+id: 'ch4-5',
+title: '如何让文字更鲜活？',
+section: '风格',
+content: `
+<h2>如何让文字更鲜活？</h2>
+<p>同样是文字，为何别人写出来的就更加触动人心？</p>
+<p>因为人类解决问题或决策时，倾向于提取记忆中和当前情景有关的信息，也倾向于相信自己身边真实发生或经历过的事情，如果你站在读者立场思考，击中人类的共有记忆或情绪，你的文字就能触动人心，这就是文字的鲜活性。</p>
+<p>文字的鲜活性体现如下：</p>
+<ul>
+<li>大脑喜欢故事而不是理论</li>
+<li>大脑喜欢评论而不是参数</li>
+<li>大脑喜欢情感而不是理性</li>
+<li>大脑喜欢具体而不是抽象</li>
+<li>大脑更喜欢自己而不是他人</li>
+<li>大脑更喜欢图像而不是数字</li>
+<li>大脑更喜欢自然而不是机器</li>
+</ul>
+<p>除了文字鲜活，证据也要鲜活。</p>
+<p>什么是鲜活证据？鲜活证据是指那些你不知道或者整个社会不知道的证据，它往往是「反常识」的。</p>
+<p>如何积攒足够多的鲜活证据？</p>
+<p>源头信息：深挖源头，拓展渠道。尽量有自己独特的信息来源。</p>
+<p>亲身经历：反思实践，总结规律。一本书最吸引人的文字就是作者的亲身经历。</p>
+<p>知识演绎：未来往往在过去，注意使用经典科学理论与新素材结合，或者使用跨学科来解释现实情况，你的观点更可能与众不同。
+`
+},
+{
+id: 'ch4-6',
+title: '如何面向读者写作？',
+section: '风格',
+content: `
+<h2>如何面向读者写作？</h2>
+<p>要写出读者喜欢读容易读的文章，你要转换至导游身份来面对读者，想象读者就在你面前，用最容易懂的话来让读者清楚明白。</p>
+<blockquote>
+<p>TED 创始人克里斯·安德森在《演讲的力量》提到：</p>
+<p>我们喜欢冒险，喜欢去新的地方时有一位博学多识的导游相伴。他会给我们讲解我们以前不知道的事情，引导我们爬出窗外，走进陌生的世界，给我们戴上全新的眼镜，让我们用一种特别的方式去观看寻常的事物……我们会让我们沉浸其中，激活我们大脑中的多个区域。因此，我在发表演讲时，常常将其视为开启一段旅程。</p>
+<p>如果想让观众跟随你的脚步，或许你首先要向他们明确你们要去的地方，让观众喜欢这次旅行，然后，确保旅行当中的每一步都有助于你们到达目的地。主线就是这趟旅行的路线，明确的主线可以确保演讲中不出现观众无法理解的跳跃，从而让演讲者和观众在演讲结束时一起满意地到达目的地。</p>
+</blockquote>
+`
+},
+{
+id: 'ch4-7',
+title: '写作风格思考 15 条',
+section: '风格',
+content: `
+<h2>写作风格思考 15 条</h2>
+<p>好的写作风格手册，思考语言运行机理，探索语言科学应用，整理文字的有效表达，目的是让学习写作之人按照这套手册来操作，也能掌握一套文字的法则。</p>
+<h3>诚实篇</h3>
+<ol>
+<li>写作是写作者自己的诚实，强迫通过写作内化成文字，思考概念是否清晰，读者是否明白。如果读者明白，证明你也明白了。</li>
+<li>我打磨的不是句子，而是思想。</li>
+<li>写作者最不应该做的事情——展现自己并不具备的智慧。</li>
+<li>好文自然流传，无须借助权势宣传。写作者尤其注意自己的感情与内在动机，这是文章流传的第一要素。</li>
+<li>好文字大概可以分为四类：1）言简意赅、文字精妙、修辞优美，例如古诗词；2）言而有道、坚持文以载道，为世所用，例如鲁迅的杂文；3）言之有物、言之成理、有句有理，例如一般的议论文；4）言之凿凿、思路清晰，证据确凿，例如时事评论。</li>
+</ol>
+<h3>清晰篇</h3>
+<ol>
+<li>写得好，思考必然清晰，但思考清晰，写作未必好，这就是写作为什么这么难。</li>
+<li>如果重要的词语无法清晰说明，尽量不要发明词汇，尝试重新定义。</li>
+<li>言语复杂并不代表思想复杂，只代表他还没想好就已经写下来，思想乱如麻而已。</li>
+<li>掌握更多清晰的词条与精确的概念，不仅是有效沟通的前提，更可避开谬误，少走弯路，更重要的是，这会让你认识更高层次的人。</li>
+<li>遇到不懂的概念，尝试用以下三个的问题，即 1）这个概念最科学权威的解释是什么？2）这个概念的对立面是什么？3）其他领域是如何解释个概念的？</li>
+</ol>
+<h3>简洁篇</h3>
+<ol>
+<li>喜欢使用复杂词汇的人，往往是那些自己也搞不懂的人。</li>
+<li>写作尽量少用复杂词汇，即使用了，也必须以真诚为出发点。</li>
+<li>夫笔著者，欲其易晓而难为，不贵难知而易造。</li>
+<li>何以为辩？喻深以浅。何以为智？喻难以易。</li>
+<li>文章以文气为主，文气有清浊之分，不分强弱，就好像音乐一样。
+`
+},
+{
+id: 'ch5-1',
+title: '为何需要清单？',
+section: '清单',
+content: `
+<h2>为何需要清单？</h2>
+<p>我曾经误以为写作的成功与天赋有关，因为一些优秀的作家看起来轻松自如，犹如内心深处流淌着写作的精髓。然而，我逐渐认识到，优秀的写作不仅依赖于天赋，更需要一套规范的流程和标准。这就是写作检查清单的作用所在。</p>
+<p>一个优秀的写作检查清单可以帮助我们思考语言的运行机理，探索语言科学的应用，并整理出文字的有效表达方式。它的目的是让学习写作的人能够按照这套清单进行操作，掌握一套有效的写作法则。</p>
+<p>一流的创作者从来不依赖于外部的评价体系。他们不会将老师或教练的反馈作为自己的唯一标准，因为优秀的作家并非别人教出来的产物。张爱玲和钱钟书等伟大的作家都是通过自己的努力和实践形成的。因此，我们需要自己制定规则，建立自己的写作检查清单。</p>
+<p>建立写作检查清单的过程需要我们不断地思考和总结。我们可以从自己的写作经验中提取出一系列的步骤和要点，并加以整理和归纳。</p>
+<p>那么，怎么让自己变得更心细呢？<strong>多写清单</strong>。每次将自己的清单从原来的粗略四项整理为二十小项甚至四十小项。如此一来，一个清单又一个清单变为内隐知识，从此能力开始提高。事前写下预判，事后及时复盘，执行之中时不断对照清单，循环以往，往往就会得到合作者夸赞：靠谱！</p>
+<p>写作跟炒菜不同，炒菜你可以依着菜谱炒出不错的菜肴，但写作却不能只依靠写作指南写出优秀的文章，<strong>写作高手都有各自写作与阅读经历，积累有一份暗默在心，不可明说的写作清单，而这份清单只能由自己构建，不能由他人代劳。</strong></p>
+<p>所以，从现在开始建立你的写作清单吧，以清单框定一切，隔离陈词滥调，养成良好的写作习惯，创造优雅的文字作品。
+`
+},
+{
+id: 'ch5-2',
+title: '删除：如何大胆裁剪？',
+section: '清单',
+content: `
+<h2>删除：如何大胆裁剪？</h2>
+<p><strong>学习写作第一要义：大胆裁剪。</strong></p>
+<h3>大胆删去</h3>
+<p>常遇上这样的情况：你已经写好了一大段，忽然发现这段文字与文章主题关系不大，但又不舍得删掉，蹍转腾挪，反复润色，试图让这段问题无缝插入，但始终如鲠在喉，最终狠心删掉，此时已经花费不少时间，以后再遇上这样情况不妨设定奥卡姆原则：如无需要，果断舍弃。</p>
+<p>尝试将以往文章中自觉得无用的句子都先加上括号，括号中的文字可以是形容词，可以是句子，也可以是段落，凡是与主题无关的文字，都可以先用括号圈起来，如果最终发现这些文字都能在不影响主旨意思的情况下删除，那就大胆地删去，到最后，你可能发现，一篇文章可删去文字可能占原来篇幅的 30% 至 50%。文字少也不必紧张，写作的改进与你可以删去的文字成正比。</p>
+<h3>删除废话</h3>
+<p>废话是怎样产生的？</p>
+<p>废话是当我们试图用语言来填补思想的空缺，或让自己看上去比实际更聪明时产生的。</p>
+<p>删去文章中的废话需要注意以下几点：</p>
+<ol>
+<li>澄清思路：首先要明确文章的主旨和核心论点，以此为基础来梳理文章的结构和逻辑，剔除与主题不相关的内容。</li>
+<li>删减重复：如果在文章中重复出现了相同的观点、用词或句式，就需要删减其中的一些。</li>
+<li>简明扼要：在表达观点时，要尽量用简单、精准、直接的语言来表达。</li>
+<li>省略不必要的细节：有些细节可能对文章的主题并不产生太大影响，可以适当省略。</li>
+</ol>
+<h3>删除陈词滥调</h3>
+<p>陈词滥调几乎等同废话，作者需要让读者读文章就像看戏一样，沉浸其中，而陈词滥调最容易让读者出戏。</p>
+<p>要像躲避瘟疫一样躲避陈词滥调，甚至要养成刻意躲避的习惯。好的写作者会刻意挑选出特别的元素，创建组合，重复使用，搭建秩序，久而久之，写作者驾轻就熟，读者轻易辨认，便形成独有的风格。</p>
+<p>即使陈旧的意象是表达意思的最佳方式，但好的作家依然会将陈词滥调重新包装，或转换成成语的原始意义，围绕这个意象舞文弄墨，或寻找新鲜的比喻和隐喻，让读者兴致勃勃，沉浸其中。</p>
+<h3>删除元话语</h3>
+<p>笨拙的写作者使用大量的元话语，元话语会让读者耗费更多的能量理解，倒是把东西直接倒出来让人看到比较省事。</p>
+<h3>删去修饰词</h3>
+<p>修饰词是简洁风格写作的大敌。修饰词大多是形容程度的词语，例如很多、十分、极其、相当、非常、有点、些许等等，这些词语不仅表意弱，无法清晰说明事情，更是破坏你的风格与说服力。</p>
+<p>每次你想写「非常」的时候，用「他妈的」代替；你的编辑会删掉，而你的文章一点也不会受影响。</p>
+<h3>少用复杂词汇</h3>
+<p>喜欢使用复杂词汇的人，往往是那些自己也搞不懂的人。</p>
+<p>写作尽量少用复杂词汇，即使用了，也必须以真诚为出发点，知之为知之，不知为不知，不要欺骗自己，也不要欺骗读者。所谓「修辞立其诚」，字如人，诚为先。</p>
+<p>尽可能多使用平实字词，能使用名词与动词说明事实，就不用形容词与副词；能使用简洁平实的词语解释概念，就不要用难懂拗口的词语增加认知复杂度。</p>
+<p>能用尽可能少的字句来表达复杂的意思，这本身就是一项才能。
+`
+},
+{
+id: 'ch6-1',
+title: '如何写得更好？',
+section: '技法',
+content: `
+<h2>如何写得更好？</h2>
+<p>有人将写作看成艺术，乘兴而来，兴尽而返；有人将写作看成技术，循序渐进，不断练习。艺术关乎天赋与灵感，技术关乎毅力与行动。</p>
+<p>但如果你读过司马贺的书，你就知道，哪有什么天赋，都是日复一日刻意练习的成果；哪有什么灵感，都是日常大量知识组块碰撞而出的直觉，天赋与灵感是留给业余玩家的。</p>
+<p>好的写作者不会依赖天赋，也不会等待灵感，而会将写作变成日常精进技艺，写得不好不会酗酒吸烟，写出让自己不满意的文字简直太平常了，继续运动跑步，出一身汗再慢慢就好。没有想法也不会不眠不休，先放一放，继续按时睡觉休息，或许找个朋友聊聊天就有新思路了。</p>
+<p>写作这门技术，没有神秘的技巧，也没有重要的提醒，唯一的提醒是你得先写，写了再改，改了再写，持续写持续改。那些声称没有学成写作的人，不是没有毅力与行动，而只是期待速成。写作与世间事同一个理，没有速成与跃迁，只有脚踏实地一步一脚印。</p>
+<p>将写作看作技术，就是要忘掉速成，忘掉跃迁。准备好学技术的心，写作也就会对你平和起来。</p>
+<p>这些技术包括且不限于</p>
+<ul>
+<li>用简单语言来表达复杂的思想</li>
+<li>用修辞让文字更有说服力和吸引力</li>
+<li>用好开头吸引读者阅读更多内容</li>
+<li>用认知科学更好理解写作</li>
+<li>用AI辅助写出更好的作品</li>
+</ul>
+<p>总之，不要抗拒技巧，不断训练，提升写作技能，再能写出好文章。
+`
+},
+{
+id: 'ch6-2',
+title: '如何写好文章开头？',
+section: '技法',
+content: `
+<h2>如何写好文章开头？</h2>
+<p>好的文章是有力的。它不会使用陈腔滥调，不会使用平庸的说法，而是会用内容充实的观察来引起好奇心。</p>
+<p>一般来讲，开头可以分为两类。第一种开头等同于电影中的一幅远景，如在西部影片中，通常首先出现的一个孤独的人骑在马背上的场景，整个人的轮廓经常映衬在天空的背景下，这个孤独的人疲惫地朝着某个地方前行，这个地方经过一系列激烈的事件后，就成了他的家。摄像机慢慢拉近，最终是骑马人，虽然他曾经只是画面上的一个点，现在却占据了整个屏幕。在电影中，这个效果要强调的是，最初的这个人并不重要。相反，强调的重点放在环境和某个自然或情感历程上。摄像机追踪处于故事核心位置的这个人物，就这样一次性地被创建了起来。</p>
+<p>第二种开头旨在通过引起读者的好奇心来挑逗他们，此外，借助电影的术语来说，首先是特写镜头开始，然后通过其他方式继续展开表露。</p>
+<p>文章的论点确切在哪里呈现出来还是其次，更重要的是务必在开头不久就把它透露出来。</p>
+<p>刻意练习文章开头，不妨先练习一句话开头。</p>
+<blockquote>
+<p>「第一句话不能把读者定住，后面写再多也没有用，没有多少人会看完第一自然段。因为看完一段需要时间，需要持续集中注意力，而读者这两样东西都没有。他们只有读完一句话的时间，能在一句话上停留1秒想一想，然后就要做出决定。」</p>
+<p>「理论上来说，只要文章的第一句话能打中读者心理上的某个点，让他们产生自己人的信任感，接下去你无论写什么，用什么格式，配什么图，甚至最后得出什么匪夷所思的答案，都已经无关紧要了。在网络的丛林里，一次点击形成的交情也许可以维系十年。但是，你准备好了相处十年的节目，别人也许一眼都不会看，只是因为第一眼看不下去罢了。</p>
+<p>文章在第三段开始发力，剧作从第五集开始精彩，这样的人在网络的丛林里大概活不过片头字幕。所以，如果你找不到第一句话，还不如别写。」</p>
+</blockquote>
+<p>要炼成一句话就能吸引读者继续阅读你的文章，这句话要充满新鲜感、新奇感、反常识、故事、幽默、惊奇、与众不同、有趣、悬念……只要能激发读者的好奇，你都需要学习。</p>
+<p>写一句话开头，除了是刻意练习，更是练就写作风格。持续用一句话开头，渐而渐之就会形成你的句子印记，形成独特风格。
+`
+},
+{
+id: 'ch6-3',
+title: '如何写得通顺？',
+section: '技法',
+content: `
+<h2>如何写得通顺？</h2>
+<p>有一个问题始终困扰写作者：自己总不愿意检查自己写的文字，即使检查了，也因为文章是自己写的，怎么看也都难发现问题。</p>
+<p>这里有三种改善文章质量的方法：</p>
+<p>1）把草稿拿给别人看；2）过一段时间自己重读一遍；3）把句子大声读出来。</p>
+<p>第一种成本颇高，你需要找到别人，然后邀请他看，还要等他反馈，修改完你忽然来了灵感，要大幅修改，还要反复修改多次，来来回回，十分麻烦。</p>
+<p>相比之下，第二三种方法成本就低太多了，全部可以自己搞掂，要么是过段时候再读，要么是现在就大声都出来，如果你无法念得顺口，那这个句子就肯定有问题。</p>
+<p>好的写作者首先是好的读者。他们吸收存储大量的字词、成语、语句结构、比喻和修辞技巧，对于这些元素怎样协调、怎样冲突、也有敏锐的触觉。这就是一位技巧熟练的作家那种难以捉摸的「耳感」——这种默默存在的风格意识，是每一本诚实的风格手册都不能直接传授的。</p>
+<blockquote>
+<p>「我是用耳朵，而不是用大脑来写诗的。」斯坦利 · 库尼兹在接受美国公共电视台（PBS）采访时这么说道，「耳朵就像绝对不会出错的试验一样值得信赖。」</p>
+</blockquote>
+<p>很多大作家也常常说耳朵在他们写作和修改作品的过程中起到了非常重要的作用。当你写得很顺手时，你不用担心写出来的句子晦涩乏味。在自然节奏的引导下，句子一句接着一句地跳出来，在还没反应过来的时候，就已经写完一段了。</p>
+<p>写作不仅要注意文意，即语义清晰，文字简洁，更要留意文气，即阅读流畅，声调节奏。</p>
+<p>好文流传千古，因为写作者知道文章若要能流传，定是能顺畅地读出来，倘若文气不顺，就已经丧失了 80% 可能。所以，写作新手若是不知道如何锻炼文气，最好的方法是写完文章后都能发出声音朗读一遍，用耳朵来写作，自己听出问题，随后思考修改的方法。
+`
+},
+{
+id: 'ch6-4',
+title: '如何写得简洁？',
+section: '技法',
+content: `
+<h2>如何写得简洁？</h2>
+<p>写作为什么这么难？</p>
+<p>因为写得好，思考必然清晰，但思考清晰，写作未必好。</p>
+<p>掌握更多清晰的词条与精确的概念，不仅是有效沟通的前提，更可避开谬误，少走弯路，更重要的是，这会让你认识更高层次的人（相信我，费大力气搞清楚概念的人真不多，只有极少数），这批人会让你发现更大的世界。</p>
+<p>之后再用奥威尔的提问方法：「一位严谨的作者在写每个句子时，都会问自己四个问题：我打算说什么？我用什么词来表达它？什么比喻或者成语可以让它更清晰？这个比喻是否给力，是否可以打动读者？然后他还会再问自己两个问题：我可以把它写得更简短一些吗？我写了什么很丑陋的东西吗？」</p>
+<p>练习简洁的写作风格</p>
+<p>就好像做菜备料一样。简洁风格之形成需要耐心，就像是拣菜一样，将无用、腐烂、失去活力的菜叶去除，只留下有用、干净、充满生气的部分。</p>
+<p>简洁写作四原则：</p>
+<ol>
+<li>简洁写作讲究清晰、易懂，修辞过多就腻，过少就干；</li>
+<li>句子、段落、篇章起承转合要清晰、严密。逻辑太多枯燥、太少散乱；</li>
+<li>故事要符合主题，恰当好处，不必太直白，也不能过于含蓄，读者读完意犹未尽，又若有所得就刚刚好</li>
+<li>一篇文章呈现在读者面前，标题清晰得体，开头点明主旨，引人入胜，主体文采、逻辑与故事比例均衡，结尾扣应主题。</li>
+</ol>
+<p>写作，就是要简洁简洁再简洁，明明白白思考，清清楚楚写作，将读者本不容易吸引的注意力捞取都到自己的手中，无论花费多大的精力都在所不惜。
+`
+},
+{
+id: 'ch7-1',
+title: '为何你要有产品？',
+section: '产品',
+content: `
+<h2>为何你要有产品？</h2>
+<blockquote>
+<p>或许你自己不这么认为，但你光是这样活着就是作品了。（吉本芭娜娜）</p>
+</blockquote>
+<p>市面上总有很多人建议，写作新手要去建立个人品牌，但建立个人品牌与知识管理一样，是个「空泛虚」的概念。</p>
+<p>建立个人品牌，首先得先有产品，再满足需求，质量好再有口碑，最后才有品牌。品牌是为产品质量赋予价值，是为增加产品的价值，品牌是为销售产品的工具，不是目的。没有产品，再好的品牌只是空中楼阁。</p>
+<p>所以，在建立个人品牌之前，必须得先创造产品。打造个人品牌，实质是将自己变成一个产品——判断信息，抓住要点，整合有限的资源，把自己的价值打包成一个内容产品，向世界交付，并且获得回报。</p>
+<h4>产品驱动你成为好创作者</h4>
+<p>创作产品并非是你作为一个创作者的目标，你的目标是通过创造产品成为一个更好的创作者。</p>
+<p>创建产品本身就可以创造意义，你要把一个原本不存在的东西带到这个世界上，你可以决定什么是适合的，什么是不适合的。马克·鲍登（Mark Bowden）曾说，一个作家应该永远都在进行最有企图心的作品。</p>
+<p>产品只是让你成为更好的人的载体与形式，学习创造产品，就是更是学习成为有趣、创作价值的人。好的创作者写作条理清晰，内容新颖有趣。</p>
+<h4>产品驱动你构建知识体系</h4>
+<p>产品往往你专业性的体现，你以往写的可能是 Blog 、日志、记录、情绪、清单……而产品不是清单，不是框架，不是泛泛而谈，不是道理，不是理论……而是故事、是证据、是专业、是建议、是逻辑、是故事、是指南、是作品。</p>
+<p>现在层出不穷新鲜事物都在想方设法掠夺的你的注意力，你的注意力才是你最宝贵的财富，适宜沉住气，看潮水流去，做十年后仍然有价值的事情。</p>
+<p>创建产品，即以自己当做过滤器，过滤掉那些与可能自我无关，与价值创造无关的东西，然后选择一个你喜欢的领域，与多数人走，不要停，慢慢地走，再与少数人走，咬紧牙关，不回头，不掉头，直到人迹罕至的地方，你会发现，你的人生已大不同。</p>
+<p>内容产品不要提供结论，而是提供方法论，结论可能随时会变，不是我们要向别人学习的，是应该我们自己得出的，方法论可以帮助你在重大问题进行决策，能在以后的学习生活产生深远影响。</p>
+<p>人生很多难题，我尝试用写作解决，人生也很多困扰，你可以用产品来封装。</p>
+<h4>产品驱动你面向用户思考</h4>
+<p>所有产品都必须真正地以用户为中心。我们不能把用户仅仅看成购买产品或服务的消费者，要把他们看成一起创造最终产品的伙伴。</p>
+<p>你的产品，就是要将用户的需求翻译成为产品，然后逐步迭代，最终让用户对产品产生一种积极的情感体验。</p>
+<p>每次当你开始着手创建产品的时候，你应该从它是如何为用户创造价值的角度来看待它。你产品的成功是由用户塑造的，用户的成功才是你的成功，你需要关注用户的成长，如果你能帮助足够多的用户得到他们想要的东西，你就会得到自己想要的东西。</p>
+<p>不断用小问题来分割大问题，再将这些问题卡片组合设计出一个结构良好的问题系统，这将是得到可靠答案的关键。
+`
+},
+{
+id: 'ch7-2',
+title: '如何开始创建产品？',
+section: '产品',
+content: `
+<h2>如何开始创建产品？</h2>
+<p>你在这个世界上的生活经验，累积了无数的体验、想法、故事与回忆，是独一无二的宝库，你应该从这个宝库中撷取精华，然后创建出具有原创独特价值的产品。</p>
+<p>你可以通过创建免费和付费产品来呈现你的独特价值。</p>
+<h3>免费产品</h3>
+<p>创建免费产品至少有两个好处：一是作为流量入口，你可以让用户零成本接触到你的产品，并确认你的产品有独特价值，你就会因此获得声誉，同时会让用户更有信心去购买你的付费产品。</p>
+<p>二是作为无压力的创作测试，你可以通过创建免费产品做肆无忌惮做各种产品测试，评估读者的偏好与自己的创作方向，如果读者的需求与创作主题契合，那就值得深入挖掘。</p>
+<p>一开始，我也不会理清自己的创作主题，也不会考虑用户的需求与感受，我不会期待这些文字会给我带来何种的利益，如果一开始就思考这些，反而会阻碍创作的动力。</p>
+<p>我创作的最低要求是要保持持续创作的习惯，每天每周保持一定创作输出，直至创作出一定数量后，我才会开始思考：我这里到底想说什么？哪些是对我有用的东西？哪些是对别人有用的东西？</p>
+<h3>付费产品</h3>
+<p>不必担心是否能卖出去，更重要的是创建付费产品本身，一旦开设完成，你就会主动思考这个产品如何才能让别人付费？如何才能解决自己大问题同时也能解决社会问题？如何才能让这个产品中有主题、有干货、有水货、并能持续更新？</p>
+<p>最简单且最低成本的创建一个内容产品，就是开设一个知识星球。
+`
+},
+{
+id: 'ch7-3',
+title: '如何五步创建写作产品？',
+section: '产品',
+content: `
+<h2>如何五步创建写作产品？</h2>
+<p>内容产品是你在人生路途中遇到问题，尝试用写作来解决问题的过程记录，这种书写记录可以在他人遇到类似问题时用作参考辅助，这个产品可以是专栏、书籍、教程、文集等。</p>
+<p>内容产品可以形成产品化思维，量化写作意识，以写作为产品搭建你的个人品牌。</p>
+<p>内容产品的难点在于将内容产品化，你可以利用写作冲刺快速制作出 MVP，在这期间逼迫你将注意力专注在内容产品，在 5 天快速掌握内容产品化的技巧，创建出你的第一个内容产品。</p>
+<p>写作冲刺重点在于冲刺，无论你是否已有内容产品的意识，你都可以尝试在有限时间发起一次努力。短短时间虽不能打磨出完整产品，但让你取得实质进展。</p>
+<p>一旦习得写作冲刺的技能，便可在写作生涯反复使用。失败一次不要紧，每次写作冲刺只是一次试验产品的机会，九败一胜，也是值得。</p>
+<h3>Day 0：准备工作，确定日程</h3>
+<p>在日程表上空出一个五天的固定时间，</p>
+<p>如果你是上班族，建议将时间安排在工作日的 5 天时间，这 5 天时间相对紧迫，更容易集中注意力，工作日更有工作冲刺的状态。不建议将周六日安排在写作冲刺日程中，周末影响冲刺连续性，</p>
+<p>可在工作日的周一到周五的早上或晚上空出一个小时，建议是早上上班前的一个小时，早上精力最好，建议是 6 点到 7 点。写作冲刺时，可设定抬头可见的倒计时，以增加专注意识和紧迫感。</p>
+<h3>Day 1：找到问题，描述需求</h3>
+<p>写作冲刺是为内容产品服务，所以不妨将内容产品具体定为每周写专栏，一年出一本书，所以，Day 1 的核心应该是找到为内容产品找到合适的主题，取得实质性进展，一旦确定主题，接下来的五天都围绕该主题进行。</p>
+<p>首先，你需要思考的问题是：你为什么要写这个专栏？这个专栏将为你的读者解决什么问题？六个月后，一年后，五年后，你希望成为怎样的人？谁是你最重要的用户，在他们体验过程中，最重要的时刻是什么？这个时刻出现了什么问题，你可以怎么解决？如果这个产品失败了，造成失败的原因可能是什么？你的预防方案是什么？</p>
+<p>其次，写出「我该如何」卡片，即为解决问题，我该如何做的解决方案，开放式写卡片，一张卡片一个要点，思路不清晰也不要紧，先写下来铺在桌子上，之后才筛选排序，自我评估选出最重要的卡片，作为你的产品大纲。</p>
+<p>产品大纲应该是一个故事，以用户为中心，有开头有结尾，符合英雄之旅，产品故事。写完产品大纲，你再为你的产品想一个名字，这是这个产品给用户留下的第一印象。</p>
+<h3>Day 2：快速思考，列出方案</h3>
+<p>一旦确定好受众与主题之后，就可以开始构思产品大纲</p>
+<p>想出尽可能多的问题解决方案，至少想出三个专栏名字，从不同角度看待与解决读者问题。可以挑选对比已有的方案做参考竞品，寻找相似专栏/书籍的大纲，最好找能经过时间验证的专栏/书籍，销量，再版次数，尽可能地增补专栏的模块与内容。</p>
+<p>大致确定产品大纲后，你完全没有必要按照大纲从头开始，而是先挑出你认为最有价值的观念和技巧，想到哪里就写到哪里，因为你知道，这个产品迟早会完成，为何不把最容易且最重要的事情先做呢？</p>
+<h3>Day 3：选择方案，设计原型</h3>
+<p>选出最有可能实现长期目标的方案，把产品大纲展示给你邀请的专家，让他提出大纲的优点和缺点。听取建议，自己做决定。</p>
+<p>无论如何，你必须在 Day 3 作出选择，决不能情况复杂而「以后再说」，即使不是十全十美也需要快速实践，因为写作冲刺是检验高风险，高代价方案的绝佳选择，</p>
+<h3>Day 4：开发打样，搭建原型</h3>
+<p>你需要用快捷的方法把投票选出的最终方案做成产品原型，以便向真实用户演示，原型尽可能看起来逼真。你需要做做一个以假乱真的产品专栏原型。</p>
+<p>一个产品专栏原型应该包括什么内容？</p>
+<p>产品名字、宣传图片、一句话介绍、专栏简介、专栏模块、你能获得的好处、作者简介、适宜人群、订阅须知、发刊词、试读专栏</p>
+<h3>Day 5：实践验证，原型测试</h3>
+<p>举行你的专栏发布会，向专家与测试用户展示你的产品，时间控制在 15 分钟，剩下的时间听取建议，基于原型分别通过 1v1 访谈的方式进行产品测试，研究哪些方面是好的，哪些则有待改善。
+`
+},
+{
+id: 'ch7-3',
+title: '如何五步创建写作产品？',
+section: '产品',
+content: `
+<h2>如何五步创建写作产品？</h2>
+<p>内容产品是你在人生路途中遇到问题，尝试用写作来解决问题的过程记录，这种书写记录可以在他人遇到类似问题时用作参考辅助，这个产品可以是专栏、书籍、教程、文集等。</p>
+<p>内容产品可以形成产品化思维，量化写作意识，以写作为产品搭建你的个人品牌。</p>
+<p>内容产品的难点在于将内容产品化，你可以利用写作冲刺快速制作出 MVP，在这期间逼迫你将注意力专注在内容产品，在 5 天快速掌握内容产品化的技巧，创建出你的第一个内容产品。</p>
+<p>写作冲刺重点在于冲刺，无论你是否已有内容产品的意识，你都可以尝试在有限时间发起一次努力。短短时间虽不能打磨出完整产品，但让你取得实质进展。</p>
+<p>一旦习得写作冲刺的技能，便可在写作生涯反复使用。失败一次不要紧，每次写作冲刺只是一次试验产品的机会，九败一胜，也是值得。</p>
+<h3>Day 0：准备工作，确定日程</h3>
+<p>在日程表上空出一个五天的固定时间，如果你是上班族，建议将时间安排在工作日的 5 天时间，这 5 天时间相对紧迫，更容易集中注意力，工作日更有工作冲刺的状态。</p>
+<p>可在工作日的周一到周五的早上或晚上空出一个小时，建议是早上上班前的一个小时，早上精力最好，建议是 6 点到 7 点。写作冲刺时，可设定抬头可见的倒计时，以增加专注意识和紧迫感。</p>
+<h3>Day 1：找到问题，描述需求</h3>
+<p>写作冲刺是为内容产品服务，所以不妨将内容产品具体定为每周写专栏，一年出一本书，所以，Day 1 的核心应该是找到为内容产品找到合适的主题，取得实质性进展，一旦确定主题，接下来的五天都围绕该主题进行。</p>
+<p>首先，你需要思考的问题是：你为什么要写这个专栏？这个专栏将为你的读者解决什么问题？六个月后，一年后，五年后，你希望成为怎样的人？谁是你最重要的用户，在他们体验过程中，最重要的时刻是什么？这个时刻出现了什么问题，你可以怎么解决？如果这个产品失败了，造成失败的原因可能是什么？你的预防方案是什么？</p>
+<p>其次，写出「我该如何」卡片，即为解决问题，我该如何做的解决方案，开放式写卡片，一张卡片一个要点，思路不清晰也不要紧，先写下来铺在桌子上，之后才筛选排序，自我评估选出最重要的卡片，作为你的产品大纲。</p>
+<p>产品大纲应该是一个故事，以用户为中心，有开头有结尾，符合英雄之旅，产品故事。写完产品大纲，你再为你的产品想一个名字，这是这个产品给用户留下的第一印象。</p>
+<h3>Day 2：快速思考，列出方案</h3>
+<p>一旦确定好受众与主题之后，就可以开始构思产品大纲。想出尽可能多的问题解决方案，至少想出三个专栏名字，从不同角度看待与解决读者问题。</p>
+<p>大致确定产品大纲后，你完全没有必要按照大纲从头开始，而是先挑出你认为最有价值的观念和技巧，想到哪里就写到哪里，因为你知道，这个产品迟早会完成，为何不把最容易且最重要的事情先做呢？</p>
+<h3>Day 3：选择方案，设计原型</h3>
+<p>选出最有可能实现长期目标的方案，把产品大纲展示给你邀请的专家，让他提出大纲的优点和缺点。听取建议，自己做决定。</p>
+<p>无论如何，你必须在 Day 3 作出选择，决不能情况复杂而「以后再说」，即使不是十全十美也需要快速实践，因为写作冲刺是检验高风险，高代价方案的绝佳选择。</p>
+<h3>Day 4：开发打样，搭建原型</h3>
+<p>你需要用快捷的方法把投票选出的最终方案做成产品原型，以便向真实用户演示，原型尽可能看起来逼真。你需要做做一个以假乱真的产品专栏原型。</p>
+<p>一个产品专栏原型应该包括什么内容？产品名字、宣传图片、一句话介绍、专栏简介、专栏模块、你能获得的好处、作者简介、适宜人群、订阅须知、发刊词、试读专栏。</p>
+<h3>Day 5：实践验证，原型测试</h3>
+<p>举行你的专栏发布会，向专家与测试用户展示你的产品，时间控制在 15 分钟，剩下的时间听取建议，基于原型分别通过 1v1 访谈的方式进行产品测试，研究哪些方面是好的，哪些则有待改善。</p>
+<p><strong>远离陈词滥调，用你自己的声音说话。用你自己的眼睛观察。用你自己的文字表达。这才是写作的真谛。</strong>
+`
+}
+];
+
+let currentPage = 0;
+let sectionCollapsed = {};
+
+function init() {
+  buildToc();
+  loadPage(currentPage);
+  calculateReadingTime();
+  setupEventListeners();
+}
+
+function buildToc() {
+  const toc = document.getElementById('toc');
+  const sections = {};
+  const sectionOrder = [];
+
+  pages.forEach(function(page, index) {
+    if (!sections[page.section]) {
+      sections[page.section] = [];
+      sectionOrder.push(page.section);
+    }
+    sections[page.section].push({ page: page, index: index });
+  });
+
+  var html = '';
+  sectionOrder.forEach(function(section) {
+    var collapsed = sectionCollapsed[section] || false;
+    html += '<li class="toc-section ' + (collapsed ? 'collapsed' : '') + '" data-section="' + section + '">';
+    html += '<span class="toc-section-title" onclick="toggleSection(\'' + section + '\')">' + section + '</span>';
+    html += '<div class="toc-section-items">';
+    sections[section].forEach(function(item) {
+      html += '<li><a href="#" data-page="' + item.index + '" onclick="goToPage(' + item.index + '); return false;">';
+      html += item.page.title;
+      html += '<span class="page-num">' + (item.index + 1) + '</span>';
+      html += '</a></li>';
+    });
+    html += '</div></li>';
+  });
+
+  toc.innerHTML = html;
+}
+
+function toggleSection(section) {
+  sectionCollapsed[section] = !sectionCollapsed[section];
+  var sectionEl = document.querySelector('.toc-section[data-section="' + section + '"]');
+  if (sectionEl) {
+    sectionEl.classList.toggle('collapsed');
+  }
+}
+
+function goToPage(index) {
+  if (index < 0 || index >= pages.length) return;
+  currentPage = index;
+  loadPage(currentPage);
+  updateTocHighlight();
+  updatePageInfo();
+  updateProgress();
+  if (window.innerWidth <= 768) {
+    document.body.classList.remove('sidebar-open');
+  }
+}
+
+function nextPage() { goToPage(currentPage + 1); }
+function prevPage() { goToPage(currentPage - 1); }
+
+function loadPage(index) {
+  var page = pages[index];
+  var wrapper = document.getElementById('contentWrapper');
+  var contentArea = document.getElementById('contentArea');
+  wrapper.innerHTML = page.content;
+  contentArea.scrollTop = 0;
+  updatePageInfo();
+  updateTocHighlight();
+  updateProgress();
+}
+
+function updatePageInfo() {
+  document.getElementById('pageInfo').textContent = (currentPage + 1) + ' / ' + pages.length;
+  document.getElementById('prevBtn').disabled = currentPage === 0;
+  document.getElementById('nextBtn').disabled = currentPage === pages.length - 1;
+}
+
+function updateTocHighlight() {
+  var links = document.querySelectorAll('.toc a');
+  links.forEach(function(link) {
+    link.classList.remove('active');
+    if (parseInt(link.dataset.page) === currentPage) {
+      link.classList.add('active');
+      link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  });
+}
+
+function updateProgress() {
+  var progress = ((currentPage + 1) / pages.length) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+}
+
+function calculateReadingTime() {
+  var totalWords = pages.reduce(function(acc, page) {
+    var text = page.content.replace(/<[^>]*>/g, '');
+    return acc + text.length;
+  }, 0);
+  var minutes = Math.ceil(totalWords / 400);
+  document.getElementById('readingTime').textContent = '预计阅读 ' + minutes + ' 分钟';
+}
+
+function setupSearch() {
+  var input = document.getElementById('searchInput');
+  var results = document.getElementById('searchResults');
+
+  input.addEventListener('input', function(e) {
+    var query = e.target.value.toLowerCase().trim();
+    if (!query) {
+      results.classList.remove('active');
+      return;
+    }
+
+    var matches = pages.filter(function(page) {
+      var text = page.content.replace(/<[^>]*>/g, '').toLowerCase();
+      return text.includes(query) || page.title.toLowerCase().includes(query);
+    });
+
+    if (matches.length === 0) {
+      results.innerHTML = '<div class="search-no-results">未找到相关内容</div>';
+    } else {
+      results.innerHTML = matches.map(function(page) {
+        var text = page.content.replace(/<[^>]*>/g, '');
+        var idx = text.toLowerCase().indexOf(query);
+        var start = Math.max(0, idx - 30);
+        var end = Math.min(text.length, idx + query.length + 30);
+        var snippet = text.slice(start, end);
+        if (start > 0) snippet = '...' + snippet;
+        if (end < text.length) snippet = snippet + '...';
+        snippet = snippet.replace(new RegExp(query, 'gi'), function(match) {
+          return '<span class="highlight">' + match + '</span>';
+        });
+
+        return '<div class="search-result-item" onclick="goToPage(' + pages.indexOf(page) + '); document.getElementById(\'searchResults\').classList.remove(\'active\'); document.getElementById(\'searchInput\').value = \'\';">' +
+          '<strong>' + page.title + '</strong><br>' + snippet + '</div>';
+      }).join('');
+    }
+
+    results.classList.add('active');
+  });
+
+  input.addEventListener('blur', function() {
+    setTimeout(function() { results.classList.remove('active'); }, 200);
+  });
+}
+
+function setupKeyboard() {
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') {
+      if (e.key === 'Escape') e.target.blur();
+      return;
+    }
+
+    const contentArea = document.getElementById('contentArea');
+
+    switch (e.key) {
+      case 'ArrowLeft': e.preventDefault(); prevPage(); break;
+      case 'ArrowRight': e.preventDefault(); nextPage(); break;
+      case 'ArrowUp': e.preventDefault(); contentArea.scrollBy({ top: -200, behavior: 'smooth' }); break;
+      case 'ArrowDown': e.preventDefault(); contentArea.scrollBy({ top: 200, behavior: 'smooth' }); break;
+      case 'k':
+        if (e.metaKey || e.ctrlKey) {
+          e.preventDefault();
+          document.getElementById('searchInput').focus();
+        }
+        break;
+      case '?':
+        document.getElementById('shortcutsHelp').classList.toggle('active');
+        break;
+      case 'Escape':
+        document.getElementById('shortcutsHelp').classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+        break;
+    }
+  });
+}
+
+function toggleSidebar() {
+  document.body.classList.toggle('sidebar-open');
+}
+
+function setupEventListeners() {
+  setupSearch();
+  setupKeyboard();
+  const savedPage = localStorage.getItem('ebook-page');
+  if (savedPage !== null) currentPage = parseInt(savedPage);
+  window.addEventListener('beforeunload', () => {
+    localStorage.setItem('ebook-page', currentPage);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

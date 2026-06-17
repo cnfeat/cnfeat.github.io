@@ -59,6 +59,12 @@ description: "卡片创作实验室 - cnfeat的个人网站。专注卡片创作
 <p class="work-desc">极简自省卡片系统，内置400+灵魂拷问。每日随机3张问题卡片，刺破日常惯性，重构自我认知。Chrome浏览器插件，免费下载。</p>
 </div>
 
+<div class="work-card">
+<a href="{{ site.baseurl }}/BuildingLifeGuide.html"><img src="{{ site.baseurl }}/images/BuildingLifeGuide.PNG" alt="人生构建写作指南" /></a>
+<h4><a href="{{ site.baseurl }}/BuildingLifeGuide.html">《人生构建写作指南》</a></h4>
+<p class="work-desc">用文字构建自我成长系统。一本将写作与个人发展深度结合的方法手册，教你如何通过文字构建人生操作系统。</p>
+</div>
+
 </div>
 
 更多产品介绍，详细见[笨方法产品货架](https://www.yuque.com/hardwaylab/zzybgv)
